@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WavesAI Academy — Master AI Agents & Automation</title>
+<meta name="description" content="The #1 AI Business Course for Beginners. 8 modules, 43 video lessons, hands-on AI tools. Build a profitable AI business from scratch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg-card: #131313;
+  --bg-card-hover: #1a1a1a;
+  --sage: #9CAF88;
+  --sage-dim: rgba(156,175,136,0.12);
+  --sage-border: rgba(156,175,136,0.15);
+  --sage-glow: rgba(156,175,136,0.06);
+  --gold: #D4A853;
+  --gold-dim: rgba(212,168,83,0.12);
+  --gold-border: rgba(212,168,83,0.2);
+  --text: #FAF5EF;
+  --text-body: rgba(250,245,239,0.6);
+  --text-dim: rgba(250,245,239,0.35);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --max-w: 1200px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+::selection { background: rgba(156,175,136,0.3); color: var(--text); }
+
+/* Grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--sage); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--text); }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  padding: 16px 0;
+  background: rgba(10,10,10,0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition);
+}
+.nav.scrolled {
+  padding: 10px 0;
+  border-bottom-color: var(--sage-border);
+  background: rgba(10,10,10,0.92);
+}
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+.nav-logo span { color: var(--sage); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text-body);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color var(--transition);
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--sage);
+  transition: width var(--transition);
+}
+.nav-links a:hover { color: var(--text); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--sage);
+  color: #0a0a0a !important;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all var(--transition);
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--text); color: #0a0a0a !important; transform: translateY(-1px); }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px; height: 32px;
+  position: relative;
+  z-index: 1001;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--text);
+  position: absolute;
+  left: 4px;
+  transition: all 0.3s;
+}
+.nav-toggle span:nth-child(1) { top: 9px; }
+.nav-toggle span:nth-child(2) { top: 15px; }
+.nav-toggle span:nth-child(3) { top: 21px; }
+.nav-toggle.active span:nth-child(1) { top: 15px; transform: rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { top: 15px; transform: rotate(-45deg); }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 160px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(156,175,136,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -300px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(212,168,83,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-border);
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 28px;
+  letter-spacing: 0.3px;
+}
+.hero-badge::before {
+  content: '★';
+  font-size: 11px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--sage);
+}
+.hero-sub {
+  font-size: 18px;
+  color: var(--text-body);
+  max-width: 620px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition);
+  border: none;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--sage);
+  color: #0a0a0a;
+}
+.btn-primary:hover {
+  background: var(--text);
+  color: #0a0a0a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(156,175,136,0.2);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(250,245,239,0.2);
+}
+.btn-outline:hover {
+  border-color: var(--sage);
+  color: var(--sage);
+  transform: translateY(-2px);
+}
+.hero-trust {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.hero-trust-item svg {
+  width: 16px; height: 16px;
+  fill: var(--sage);
+  flex-shrink: 0;
+}
+
+/* Course mockup */
+.hero-mockup {
+  margin-top: 60px;
+  position: relative;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mockup-frame {
+  background: var(--bg-card);
+  border: 1px solid var(--sage-border);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(156,175,136,0.05);
+}
+.mockup-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  background: rgba(156,175,136,0.04);
+  border-bottom: 1px solid var(--sage-border);
+}
+.mockup-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.mockup-dot:nth-child(1) { background: #ff5f57; }
+.mockup-dot:nth-child(2) { background: #febc2e; }
+.mockup-dot:nth-child(3) { background: #28c840; }
+.mockup-body {
+  padding: 40px;
+  display: flex;
+  gap: 24px;
+  min-height: 300px;
+}
+.mockup-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+}
+.mockup-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: var(--text-body);
+  margin-bottom: 4px;
+  transition: background var(--transition);
+}
+.mockup-sidebar-item.active {
+  background: var(--sage-dim);
+  color: var(--sage);
+  font-weight: 600;
+}
+.mockup-sidebar-num {
+  width: 24px; height: 24px;
+  background: rgba(156,175,136,0.1);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--sage);
+  flex-shrink: 0;
+}
+.mockup-sidebar-item.active .mockup-sidebar-num {
+  background: var(--sage);
+  color: #0a0a0a;
+}
+.mockup-main { flex: 1; }
+.mockup-video {
+  background: linear-gradient(135deg, #1a1a1a, #111);
+  border-radius: 14px;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.mockup-play {
+  width: 56px; height: 56px;
+  background: var(--sage);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(156,175,136,0.3);
+}
+.mockup-play svg { width: 20px; height: 20px; fill: #0a0a0a; margin-left: 3px; }
+.mockup-lesson-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.mockup-lesson-meta {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.mockup-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+.mockup-progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(156,175,136,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.mockup-progress-fill {
+  height: 100%;
+  width: 35%;
+  background: var(--sage);
+  border-radius: 3px;
+}
+.mockup-progress-text {
+  font-size: 12px;
+  color: var(--sage);
+  font-weight: 600;
+}
+.mockup-glow {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 120px;
+  background: radial-gradient(ellipse, rgba(156,175,136,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ===== SOCIAL PROOF ===== */
+.social-proof {
+  padding: 60px 0;
+  border-top: 1px solid var(--sage-border);
+  border-bottom: 1px solid var(--sage-border);
+  background: rgba(156,175,136,0.02);
+}
+.social-proof-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.social-proof-label {
+  font-size: 14px;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+.social-proof-stat {
+  text-align: center;
+}
+.social-proof-stat-val {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+.social-proof-stat-label {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+.social-proof-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--sage-border);
+}
+
+/* ===== SECTIONS ===== */
+section { padding: 100px 0; }
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--sage);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.section-label::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--sage);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 17px;
+  color: var(--text-body);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ===== MODULES ===== */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.module-card {
+  background: var(--bg-card);
+  border: 1px solid var(--sage-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.module-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--sage), transparent);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.module-card:hover {
+  border-color: rgba(156,175,136,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.module-card:hover::before { opacity: 1; }
+.module-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: rgba(156,175,136,0.12);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.module-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+.module-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+.module-desc {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.module-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.module-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ===== HOW IT WORKS ===== */
+.how-it-works { background: rgba(156,175,136,0.02); }
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  position: relative;
+}
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 48px;
+  left: 16.66%;
+  width: 66.66%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sage), rgba(212,168,83,0.5), var(--gold));
+}
+.step-card {
+  text-align: center;
+  position: relative;
+}
+.step-num {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  position: relative;
+  z-index: 2;
+}
+.step-card:nth-child(1) .step-num {
+  background: var(--sage-dim);
+  color: var(--sage);
+  border: 2px solid rgba(156,175,136,0.3);
+}
+.step-card:nth-child(2) .step-num {
+  background: rgba(186,176,112,0.12);
+  color: #bab070;
+  border: 2px solid rgba(186,176,112,0.3);
+}
+.step-card:nth-child(3) .step-num {
+  background: var(--gold-dim);
+  color: var(--gold);
+  border: 2px solid var(--gold-border);
+}
+.step-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.step-desc {
+  font-size: 15px;
+  color: var(--text-body);
+  max-width: 300px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== FEATURES ===== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--sage-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  transition: all var(--transition);
+}
+.feature-card:hover {
+  border-color: rgba(156,175,136,0.3);
+  transform: translateY(-3px);
+}
+.feature-icon {
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+.feature-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.feature-desc {
+  font-size: 13px;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+/* ===== AI TOOLS ===== */
+.ai-tools {
+  position: relative;
+  overflow: hidden;
+}
+.ai-tools::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(156,175,136,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.ai-tools-inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.ai-tools-text { flex: 1; }
+.ai-tools-visual { flex: 1; }
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.tool-card {
+  background: var(--bg-card);
+  border: 1px solid var(--sage-border);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all var(--transition);
+}
+.tool-card:hover {
+  border-color: rgba(156,175,136,0.35);
+  background: var(--bg-card-hover);
+}
+.tool-icon-wrap {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--sage-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.tool-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.tool-type {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+.ai-tools-note {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: var(--sage-dim);
+  border: 1px solid var(--sage-border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--sage);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== PRICING ===== */
+.pricing { background: rgba(156,175,136,0.02); }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+  align-items: start;
+}
+.price-card {
+  background: var(--bg-card);
+  border: 1px solid var(--sage-border);
+  border-radius: 20px;
+  padding: 36px 28px;
+  position: relative;
+  transition: all var(--transition);
+}
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.price-card.featured {
+  border-color: var(--sage);
+  background: linear-gradient(180deg, rgba(156,175,136,0.06) 0%, var(--bg-card) 100%);
+  transform: scale(1.02);
+}
+.price-card.featured:hover { transform: scale(1.02) translateY(-4px); }
+.price-badge {
+  position: absolute;
+  top: -12px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--sage);
+  color: #0a0a0a;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.price-badge.gold {
+  background: var(--gold);
+}
+.price-tier {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sage);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+.price-amount {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -1px;
+  margin-bottom: 4px;
+}
+.price-amount span { font-size: 20px; font-weight: 400; color: var(--text-body); }
+.price-period {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+}
+.price-divider {
+  height: 1px;
+  background: var(--sage-border);
+  margin-bottom: 24px;
+}
+.price-features {
+  list-style: none;
+  margin-bottom: 28px;
+}
+.price-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-body);
+  padding: 6px 0;
+}
+.price-features li::before {
+  content: '✓';
+  color: var(--sage);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.price-features li.highlight {
+  color: var(--text);
+  font-weight: 500;
+}
+.price-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition);
+  border: none;
+  text-decoration: none;
+}
+.price-btn-primary {
+  background: var(--sage);
+  color: #0a0a0a;
+}
+.price-btn-primary:hover {
+  background: var(--text);
+  color: #0a0a0a;
+}
+.price-btn-outline {
+  background: transparent;
+  border: 1px solid var(--sage-border);
+  color: var(--sage);
+}
+.price-btn-outline:hover {
+  background: var(--sage-dim);
+  border-color: var(--sage);
+}
+.pricing-note {
+  text-align: center;
+  margin-top: 36px;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+.pricing-note strong { color: var(--text-body); }
+.pricing-guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 16px 24px;
+  background: var(--sage-dim);
+  border: 1px solid var(--sage-border);
+  border-radius: 50px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pricing-guarantee svg {
+  width: 24px; height: 24px;
+  fill: var(--sage);
+  flex-shrink: 0;
+}
+.pricing-guarantee span {
+  font-size: 14px;
+  color: var(--sage);
+  font-weight: 600;
+}
+
+/* ===== MRR ===== */
+.mrr {
+  position: relative;
+  overflow: hidden;
+}
+.mrr-inner {
+  background: linear-gradient(135deg, rgba(212,168,83,0.06) 0%, rgba(156,175,136,0.04) 100%);
+  border: 1px solid var(--gold-border);
+  border-radius: 24px;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+}
+.mrr-inner::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(212,168,83,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.mrr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.mrr-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+.mrr-title em {
+  color: var(--gold);
+  font-style: italic;
+}
+.mrr-desc {
+  font-size: 16px;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.mrr-features {
+  list-style: none;
+}
+.mrr-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 15px;
+  color: var(--text-body);
+}
+.mrr-features li::before {
+  content: '→';
+  color: var(--gold);
+  font-weight: 700;
+}
+.mrr-visual {
+  position: relative;
+}
+.mrr-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+}
+.mrr-stat-val {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: -1px;
+}
+.mrr-stat-label {
+  font-size: 15px;
+  color: var(--text-body);
+  margin-top: 4px;
+}
+.mrr-stat-sub {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.mrr-cta {
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials { background: rgba(156,175,136,0.02); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.testimonial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--sage-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all var(--transition);
+}
+.testimonial-card:hover {
+  border-color: rgba(156,175,136,0.3);
+}
+.testimonial-stars {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+.testimonial-text {
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--sage-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--sage);
+}
+.testimonial-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.testimonial-role {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* ===== FAQ ===== */
+.faq-list {
+  max-width: 760px;
+  margin: 48px auto 0;
+}
+.faq-item {
+  border-bottom: 1px solid var(--sage-border);
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  transition: color var(--transition);
+}
+.faq-question:hover { color: var(--sage); }
+.faq-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--sage-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+.faq-icon svg {
+  width: 12px; height: 12px;
+  fill: var(--sage);
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-icon {
+  background: var(--sage);
+}
+.faq-item.open .faq-icon svg {
+  fill: #0a0a0a;
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+}
+.faq-answer-inner {
+  padding: 0 0 22px;
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+/* ===== FINAL CTA ===== */
+.final-cta {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px; height: 500px;
+  background: radial-gradient(ellipse, rgba(156,175,136,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.final-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.final-cta-sub {
+  font-size: 17px;
+  color: var(--text-body);
+  margin-bottom: 36px;
+}
+.final-cta-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--sage-border);
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+.footer-logo span { color: var(--sage); }
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: 13px;
+  color: var(--text-dim);
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: var(--sage); }
+.footer-family {
+  width: 100%;
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(156,175,136,0.08);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.footer-family a { color: var(--sage); }
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 12px;
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .modules-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .price-card.featured { transform: none; }
+  .price-card.featured:hover { transform: translateY(-4px); }
+  .mrr-grid { grid-template-columns: 1fr; }
+  .mrr-inner { padding: 40px; }
+  .ai-tools-inner { flex-direction: column; }
+  .mockup-body { flex-direction: column; }
+  .mockup-sidebar { width: 100%; display: flex; gap: 8px; overflow-x: auto; }
+  .mockup-sidebar-item { white-space: nowrap; }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: rgba(10,10,10,0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 1000;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 20px; }
+  .nav-toggle { display: block; }
+  .hero { padding: 120px 0 60px; }
+  .hero h1 { letter-spacing: -0.5px; }
+  .hero-sub { font-size: 16px; }
+  .modules-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; gap: 32px; }
+  .steps::before { display: none; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .social-proof-inner { gap: 24px; }
+  .social-proof-divider { display: none; }
+  section { padding: 70px 0; }
+  .mockup-body { padding: 20px; }
+  .mockup-sidebar { display: none; }
+  .mrr-inner { padding: 28px; }
+}
+@media (max-width: 480px) {
+  .features-grid { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .btn { width: 100%; justify-content: center; }
+  .hero-trust { flex-direction: column; align-items: center; gap: 12px; }
+  .tools-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">WavesAI <span>Academy</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#modules" onclick="closeMenu()">Course</a></li>
+      <li><a href="#modules" onclick="closeMenu()">Modules</a></li>
+      <li><a href="#pricing" onclick="closeMenu()">Pricing</a></li>
+      <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+      <li><a href="#pricing" class="nav-cta" onclick="closeMenu()">Enrol Now</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge reveal">The #1 AI Business Course for Beginners</div>
+      <h1 class="reveal">Master AI Agents &amp; Automation — Build a Profitable AI Business <em>from Scratch</em></h1>
+      <p class="hero-sub reveal">8 comprehensive modules. 43 video lessons. Hands-on AI tools. Zero experience needed. Join thousands learning to build, sell, and scale AI-powered businesses.</p>
+      <div class="hero-ctas reveal">
+        <a href="#pricing" class="btn btn-primary">Enrol Now — From £97</a>
+        <a href="#modules" class="btn btn-outline">▶ Watch Free Preview</a>
+      </div>
+      <div class="hero-trust reveal">
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          30-Day Money Back Guarantee
+        </div>
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Lifetime Access
+        </div>
+        <div class="hero-trust-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Certificate Included
+        </div>
+      </div>
+    </div>
+
+    <!-- Course Mockup -->
+    <div class="hero-mockup reveal">
+      <div class="mockup-frame">
+        <div class="mockup-bar">
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-sidebar">
+            <div class="mockup-sidebar-item active">
+              <div class="mockup-sidebar-num">1</div>
+              The AI Landscape
+            </div>
+            <div class="mockup-sidebar-item">
+              <div class="mockup-sidebar-num">2</div>
+              Your AI Toolkit
+            </div>
+            <div class="mockup-sidebar-item">
+              <div class="mockup-sidebar-num">3</div>
+              Building AI Systems
+            </div>
+            <div class="mockup-sidebar-item">
+              <div class="mockup-sidebar-num">4</div>
+              AI Content Creation
+            </div>
+            <div class="mockup-sidebar-item">
+              <div class="mockup-sidebar-num">5</div>
+              Finding Clients
+            </div>
+          </div>
+          <div class="mockup-main">
+            <div class="mockup-video">
+              <div class="mockup-play">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="mockup-lesson-title">Lesson 1.1 — What Are AI Agents?</div>
+            <div class="mockup-lesson-meta">Module 1 · 12 min · Beginner</div>
+            <div class="mockup-progress">
+              <div class="mockup-progress-bar"><div class="mockup-progress-fill"></div></div>
+              <div class="mockup-progress-text">35% complete</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mockup-glow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<div class="social-proof">
+  <div class="container">
+    <div class="social-proof-inner reveal">
+      <div class="social-proof-label">Trusted by 2,500+ students worldwide</div>
+      <div class="social-proof-divider"></div>
+      <div class="social-proof-stat">
+        <div class="social-proof-stat-val">4.9/5</div>
+        <div class="social-proof-stat-label">Rating</div>
+      </div>
+      <div class="social-proof-divider"></div>
+      <div class="social-proof-stat">
+        <div class="social-proof-stat-val">43</div>
+        <div class="social-proof-stat-label">Video Lessons</div>
+      </div>
+      <div class="social-proof-divider"></div>
+      <div class="social-proof-stat">
+        <div class="social-proof-stat-val">8</div>
+        <div class="social-proof-stat-label">Modules</div>
+      </div>
+      <div class="social-proof-divider"></div>
+      <div class="social-proof-stat">
+        <div class="social-proof-stat-val">12+</div>
+        <div class="social-proof-stat-label">Hours Content</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modules -->
+<section id="modules">
+  <div class="container">
+    <div class="section-label reveal">Course Curriculum</div>
+    <h2 class="section-title reveal">Everything You Need to Build<br>an AI Business</h2>
+    <p class="section-subtitle reveal">From understanding AI to landing clients and scaling — each module builds on the last, taking you from complete beginner to confident AI entrepreneur.</p>
+
+    <div class="modules-grid">
+      <div class="module-card reveal">
+        <div class="module-num">01</div>
+        <div class="module-icon">🌐</div>
+        <div class="module-title">The AI Landscape</div>
+        <div class="module-desc">Understanding AI agents, what they do, and why businesses pay thousands for them. The massive opportunity ahead of you.</div>
+        <div class="module-meta"><span>📹 5 Lessons</span><span>⏱ 1.5 hrs</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-num">02</div>
+        <div class="module-icon">🛠️</div>
+        <div class="module-title">Your AI Toolkit</div>
+        <div class="module-desc">Master ChatGPT, Leonardo AI, ElevenLabs, and other essential tools. Hands-on walkthroughs of every platform you need.</div>
+        <div class="module-meta"><span>📹 6 Lessons</span><span>⏱ 2 hrs</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-num">03</div>
+        <div class="module-icon">🤖</div>
+        <div class="module-title">Building AI Systems</div>
+        <div class="module-desc">Create AI chatbots, voice agents, and automation workflows. Build real systems that businesses will pay you for.</div>
+        <div class="module-meta"><span>📹 6 Lessons</span><span>⏱ 2 hrs</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-num">04</div>
+        <div class="module-icon">🎨</div>
+        <div class="module-title">AI Content Creation</div>
+        <div class="module-desc">Generate images, videos, voiceovers, and social content at scale. Turn AI into a content machine for any brand.</div>
+        <div class="module-meta"><span>📹 6 Lessons</span><span>⏱ 1.5 hrs</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-num">05</div>
+        <div class="module-icon">🎯</div>
+        <div class="module-title">Finding &amp; Landing Clients</div>
+        <div class="module-desc">Proven strategies to find businesses that need AI services. Cold outreach, warm leads, and referral systems that work.</div>
+        <div class="module-meta"><span>📹 6 Lessons</span><span>⏱ 1.5 hrs</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-num">06</div>
+        <div class="module-icon">💰</div>
+        <div class="module-title">Pricing &amp; Packaging</div>
+        <div class="module-desc">Structure your offers, create irresistible packages, and price your services for maximum profit. Stop undercharging.</div>
+        <div class="module-meta"><span>📹 5 Lessons</span><span>⏱ 1 hr</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-num">07</div>
+        <div class="module-icon">⚙️</div>
+        <div class="module-title">Delivery &amp; Operations</div>
+        <div class="module-desc">Set up systems to deliver AI services professionally. Client onboarding, project management, and quality control.</div>
+        <div class="module-meta"><span>📹 5 Lessons</span><span>⏱ 1.5 hrs</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-num">08</div>
+        <div class="module-icon">🚀</div>
+        <div class="module-title">Scaling Your AI Business</div>
+        <div class="module-desc">Hire, automate, and grow to £10K+/month. Build a team, systemise delivery, and create recurring revenue streams.</div>
+        <div class="module-meta"><span>📹 4 Lessons</span><span>⏱ 1 hr</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works">
+  <div class="container" style="text-align:center;">
+    <div class="section-label reveal" style="justify-content:center;">Your Journey</div>
+    <h2 class="section-title reveal">Three Steps to Your AI Business</h2>
+    <p class="section-subtitle reveal" style="margin-left:auto;margin-right:auto;">A proven path from complete beginner to earning your first income with AI.</p>
+
+    <div class="steps">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <div class="step-title">Learn</div>
+        <div class="step-desc">Watch video lessons at your own pace. Take quizzes after every lesson to lock in your knowledge. No fluff, no jargon.</div>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">2</div>
+        <div class="step-title">Build</div>
+        <div class="step-desc">Practice with real AI tools in our built-in sandbox. Complete hands-on exercises that mirror real client projects.</div>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">3</div>
+        <div class="step-title">Earn</div>
+        <div class="step-desc">Launch your AI business and land your first client. Or resell the course with MRR rights and start earning immediately.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label reveal" style="justify-content:center;">What's Included</div>
+      <h2 class="section-title reveal">Not Just a Course — A Complete<br>Business System</h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">📹</div>
+        <div class="feature-title">43 HD Video Lessons</div>
+        <div class="feature-desc">Beginner-friendly, plain English. No technical jargon or assumed knowledge.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📝</div>
+        <div class="feature-title">Interactive Quizzes</div>
+        <div class="feature-desc">Test your knowledge after every lesson. 80% pass rate to unlock the next module.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🧪</div>
+        <div class="feature-title">AI Tools Sandbox</div>
+        <div class="feature-desc">Practice with real AI tools inside the course. No separate subscriptions needed.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🎓</div>
+        <div class="feature-title">Certificate</div>
+        <div class="feature-desc">Earn a certificate of completion. Share it on LinkedIn and your portfolio.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📖</div>
+        <div class="feature-title">A-Z AI Glossary</div>
+        <div class="feature-desc">Every technical term explained in plain English with in-lesson tooltip popups.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📦</div>
+        <div class="feature-title">Marketing Kit</div>
+        <div class="feature-desc">Ready-made sales pages, email templates, and social media assets for MRR resellers.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">👥</div>
+        <div class="feature-title">Private Community</div>
+        <div class="feature-desc">Connect with fellow students, share wins, and get feedback on your projects.</div>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">♾️</div>
+        <div class="feature-title">Lifetime Updates</div>
+        <div class="feature-desc">AI moves fast. Get new lessons and module updates as the industry evolves.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Tools -->
+<section class="ai-tools">
+  <div class="container">
+    <div class="ai-tools-inner">
+      <div class="ai-tools-text">
+        <div class="section-label reveal">Built-In Tools</div>
+        <h2 class="section-title reveal">Practice With Real AI Tools — Inside the Course</h2>
+        <p class="section-subtitle reveal">Pro and Business tier students get access to our AI tools sandbox. Practice everything you learn with real tools — no separate subscriptions, no extra costs.</p>
+        <div class="ai-tools-note reveal">
+          <span style="font-size:18px;">💡</span>
+          No separate subscriptions needed — everything is built into the course platform.
+        </div>
+      </div>
+      <div class="ai-tools-visual reveal">
+        <div class="tools-grid">
+          <div class="tool-card">
+            <div class="tool-icon-wrap">🧠</div>
+            <div>
+              <div class="tool-name">ChatGPT</div>
+              <div class="tool-type">Text &amp; Strategy</div>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon-wrap">🎨</div>
+            <div>
+              <div class="tool-name">Leonardo AI</div>
+              <div class="tool-type">Image Generation</div>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon-wrap">🎙️</div>
+            <div>
+              <div class="tool-name">ElevenLabs</div>
+              <div class="tool-type">Voice &amp; Audio</div>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon-wrap">🎬</div>
+            <div>
+              <div class="tool-name">D-ID</div>
+              <div class="tool-type">Video Avatars</div>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon-wrap">📧</div>
+            <div>
+              <div class="tool-name">AI Email</div>
+              <div class="tool-type">Outreach</div>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon-wrap">🤖</div>
+            <div>
+              <div class="tool-name">Chatbot Builder</div>
+              <div class="tool-type">Automation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+  <div class="container" style="text-align:center;">
+    <div class="section-label reveal" style="justify-content:center;">Pricing</div>
+    <h2 class="section-title reveal">Choose Your Path</h2>
+    <p class="section-subtitle reveal" style="margin-left:auto;margin-right:auto;">One-time payment. Lifetime access. No subscriptions, no hidden fees.</p>
+
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <div class="price-card reveal">
+        <div class="price-tier">Starter</div>
+        <div class="price-amount">£97</div>
+        <div class="price-period">One-time payment · Lifetime access</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>All 8 modules &amp; 43 video lessons</li>
+          <li>Interactive quizzes &amp; exercises</li>
+          <li>Certificate of completion</li>
+          <li>A-Z AI Glossary</li>
+          <li>Lifetime access &amp; updates</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#" class="price-btn price-btn-outline">Get Started</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="price-card featured reveal">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-tier">Pro</div>
+        <div class="price-amount">£297</div>
+        <div class="price-period">One-time payment · Lifetime access</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li class="highlight">Everything in Starter, plus:</li>
+          <li>Built-in AI Tools Sandbox</li>
+          <li>500 AI Credits included</li>
+          <li>Priority support</li>
+          <li>Private community access</li>
+          <li>Bonus: Client acquisition templates</li>
+        </ul>
+        <a href="#" class="price-btn price-btn-primary">Go Pro</a>
+      </div>
+
+      <!-- Business MRR -->
+      <div class="price-card reveal">
+        <div class="price-badge gold">Best Value</div>
+        <div class="price-tier" style="color:var(--gold);">Business MRR</div>
+        <div class="price-amount">£497</div>
+        <div class="price-period">One-time payment · Lifetime access</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li class="highlight">Everything in Pro, plus:</li>
+          <li>Master Resell Rights (50/50 split)</li>
+          <li>Done-for-you marketing kit</li>
+          <li>Branded reseller dashboard</li>
+          <li>Sales page templates</li>
+          <li>Unlimited resell potential</li>
+        </ul>
+        <a href="#" class="price-btn price-btn-primary" style="background:var(--gold);color:#0a0a0a;">Start Reselling</a>
+      </div>
+    </div>
+
+    <div class="pricing-note reveal">
+      <strong>Upgrade anytime</strong> — just pay the difference. <strong>Klarna Pay in 3</strong> available on all plans.
+    </div>
+    <div class="pricing-guarantee reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+      <span>30-Day Money Back Guarantee — Zero Risk</span>
+    </div>
+  </div>
+</section>
+
+<!-- MRR Section -->
+<section class="mrr" id="mrr">
+  <div class="container">
+    <div class="mrr-inner reveal">
+      <div class="mrr-grid">
+        <div>
+          <div class="section-label">Master Resell Rights</div>
+          <div class="mrr-title">Turn This Course Into Your First <em>AI Income Stream</em></div>
+          <div class="mrr-desc">Buy the Business tier, resell the course to others, and keep 50% of every sale. You don't need to create anything — we've done it all for you.</div>
+          <ul class="mrr-features">
+            <li>Ready-made sales pages you can use immediately</li>
+            <li>Email sequences written and ready to send</li>
+            <li>Social media templates for every platform</li>
+            <li>Your own branded reseller dashboard</li>
+            <li>Automatic 50/50 revenue splits via Stripe</li>
+            <li>Unlimited resell potential — no caps</li>
+          </ul>
+        </div>
+        <div class="mrr-visual">
+          <div class="mrr-stat-card">
+            <div class="mrr-stat-val">50/50</div>
+            <div class="mrr-stat-label">Revenue split on every sale you make</div>
+            <div class="mrr-stat-sub">Sell the course for £497. Keep £248.50 per sale. Just 2 sales and you've made your money back. Everything after that is pure profit.</div>
+          </div>
+          <div class="mrr-cta">
+            <a href="#pricing" class="btn btn-primary" style="background:var(--gold);color:#0a0a0a;">Get MRR Access — £497</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container" style="text-align:center;">
+    <div class="section-label reveal" style="justify-content:center;">Student Results</div>
+    <h2 class="section-title reveal">What Our Students Say</h2>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"I went from knowing absolutely nothing about AI to landing my first client within 3 weeks of starting the course. The step-by-step approach made everything click."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JM</div>
+          <div>
+            <div class="testimonial-name">James M.</div>
+            <div class="testimonial-role">AI Consultant, London</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"The MRR model is genius. I bought the Business tier, shared the course with my audience, and made my investment back in 4 days. Now it's a consistent income stream."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SA</div>
+          <div>
+            <div class="testimonial-name">Sarah A.</div>
+            <div class="testimonial-role">Digital Marketer, Manchester</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"The AI sandbox is incredible. Being able to practice with real tools inside the course — without paying for separate subscriptions — saved me hundreds of pounds."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DK</div>
+          <div>
+            <div class="testimonial-name">David K.</div>
+            <div class="testimonial-role">Freelancer, Birmingham</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label reveal" style="justify-content:center;">FAQ</div>
+      <h2 class="section-title reveal">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do I need any prior experience with AI?
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Absolutely not. This course is designed for complete beginners. We explain everything in plain English, starting from the very basics. If you can use a computer and browse the internet, you can take this course.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How long do I have access to the course?
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Lifetime. Once you enrol, you have access forever — including all future updates and new lessons we add. AI moves fast and so does this course.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What are Master Resell Rights (MRR)?
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">MRR means you can resell this course to others and keep 50% of every sale. We handle everything — the platform, support, and delivery. You just share your unique link and earn. It's available on the Business tier (£497).</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I get a refund if it's not for me?
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. We offer a 30-day money back guarantee on all plans. If you're not satisfied for any reason, contact us within 30 days and we'll refund you in full. No questions asked.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What AI tools do I get access to?
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Pro and Business tier students get access to our built-in AI sandbox which includes ChatGPT, Leonardo AI (image generation), ElevenLabs (voice), D-ID (video avatars), and more. You get 500 credits to use these tools — no separate subscriptions needed.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How does the 50/50 revenue split work?
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">When someone purchases the course through your unique reseller link, the payment is automatically split 50/50 via Stripe Connect. You get your share deposited directly into your bank account. No invoicing, no chasing payments.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is this suitable for complete beginners?
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">100%. That's exactly who this course is built for. We start with "what is AI?" and build up from there. Every lesson uses real-world examples and step-by-step walkthroughs. If you can send an email, you can do this.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do I need to buy separate AI tool subscriptions?
+          <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Not for the course. Pro and Business tier students get built-in access to all AI tools within our platform. When you're ready to work with real clients, you may want your own subscriptions, but the course covers free tiers and affordable options for each tool.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta-title reveal">Ready to Start Your<br>AI Journey?</div>
+    <div class="final-cta-sub reveal">Join 2,500+ students building profitable AI businesses.</div>
+    <a href="#pricing" class="btn btn-primary reveal" style="font-size:18px;padding:18px 48px;">Enrol Now — From £97</a>
+    <div class="final-cta-note reveal">30-day money back guarantee. Cancel risk-free.</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">WavesAI <span>Academy</span></div>
+      <ul class="footer-links">
+        <li><a href="#modules">Course</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="footer-family">
+        Part of the WavesAI family · <a href="https://wavesaistudio.com" target="_blank">WavesAI Studio</a> · <a href="https://wavesaisystems.com" target="_blank">WavesAI Systems</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 WavesAI Academy. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navigation scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', function() {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Mobile menu
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', function() {
+  navToggle.classList.toggle('active');
+  navLinks.classList.toggle('open');
+  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+});
+function closeMenu() {
+  navToggle.classList.remove('active');
+  navLinks.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// FAQ accordion
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const answer = item.querySelector('.faq-answer');
+  const isOpen = item.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq-item.open').forEach(function(el) {
+    el.classList.remove('open');
+    el.querySelector('.faq-answer').style.maxHeight = '0';
+  });
+
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) {
+  revealObserver.observe(el);
+});
+</script>
+
+</body>
+</html>
