@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>14-Day AI Practice Plan — WavesAI Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #9CAF88;
+    --sage-light: #E8EDE3;
+    --sage-dark: #6B7D5A;
+    --sage-faint: #F4F7F1;
+    --charcoal: #2C2C2C;
+    --charcoal-light: #4A4A4A;
+    --warm-white: #FAFAF8;
+    --cream: #F5F3EE;
+    --border: #E2E0DB;
+    --text: #333333;
+    --text-light: #777777;
+    --accent-gold: #C4A962;
+    --module-1: #9CAF88;
+    --module-2: #7BA0B8;
+    --module-3: #B88E7B;
+    --module-4: #A87BB8;
+    --module-5: #B8A07B;
+    --module-6: #7BB8A0;
+    --module-7: #B87B8E;
+    --module-8: #8E8EB8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  .plan-header {
+    background: linear-gradient(135deg, #2C2C2C 0%, #3D3D3D 50%, #2C2C2C 100%);
+    color: white;
+    padding: 3.5rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .plan-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse 600px 300px at 20% 80%, rgba(156,175,136,0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 400px 400px at 80% 20%, rgba(156,175,136,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .plan-header .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .plan-header .logo span {
+    color: white;
+  }
+
+  .plan-header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+
+  .plan-header .subtitle {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .header-badge {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--charcoal);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+
+  /* ── INTRO SECTION ── */
+  .intro-section {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 1rem;
+  }
+
+  .intro-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem 2.25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .intro-stat {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .intro-stat .number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--sage-dark);
+    line-height: 1;
+  }
+
+  .intro-stat .label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .how-to-use {
+    max-width: 820px;
+    margin: 1.5rem auto 0;
+    padding: 0 2rem;
+  }
+
+  .how-to-use-inner {
+    background: var(--sage-faint);
+    border-left: 3px solid var(--sage);
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .how-to-use h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--sage-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .how-to-use p {
+    font-size: 0.9rem;
+    color: var(--charcoal-light);
+    line-height: 1.65;
+  }
+
+  /* ── PROGRESS TRACKER ── */
+  .progress-section {
+    max-width: 820px;
+    margin: 2rem auto 0;
+    padding: 0 2rem;
+  }
+
+  .progress-tracker {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+  }
+
+  .progress-tracker h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  .progress-grid {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    gap: 6px;
+  }
+
+  .progress-day {
+    aspect-ratio: 1;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .progress-day:hover {
+    border-color: var(--sage);
+    color: var(--sage-dark);
+    transform: scale(1.08);
+  }
+
+  .progress-day.completed {
+    background: var(--sage);
+    border-color: var(--sage);
+    color: white;
+  }
+
+  .progress-day.completed::after {
+    content: '✓';
+    position: absolute;
+    font-size: 0.65rem;
+    bottom: -1px;
+    right: 2px;
+  }
+
+  .progress-bar-container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--sage-light);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--sage), var(--sage-dark));
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+
+  .progress-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-light);
+    white-space: nowrap;
+  }
+
+  /* ── WEEK DIVIDERS ── */
+  .week-divider {
+    max-width: 820px;
+    margin: 2.5rem auto 0;
+    padding: 0 2rem;
+  }
+
+  .week-divider-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .week-divider-inner::before,
+  .week-divider-inner::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .week-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    background: var(--sage-light);
+    padding: 0.4rem 1.25rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* ── DAY CARDS ── */
+  .days-container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .day-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-top: 1.25rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    page-break-inside: avoid;
+  }
+
+  .day-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  .day-card-header {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .day-number {
+    width: 72px;
+    min-height: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .day-number .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .day-number .day-label {
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+
+  .day-title-area {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .day-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--charcoal);
+    line-height: 1.3;
+  }
+
+  .day-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .module-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .module-tag .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .time-tag {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .time-tag svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .day-card-body {
+    padding: 1.5rem 1.25rem 1.5rem calc(72px + 1.25rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .objectives-section h4,
+  .tasks-section h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 0.65rem;
+  }
+
+  .objectives-list {
+    list-style: none;
+  }
+
+  .objectives-list li {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    padding: 0.2rem 0;
+    padding-left: 1.1rem;
+    position: relative;
+    color: var(--charcoal-light);
+  }
+
+  .objectives-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--sage);
+  }
+
+  .tasks-list {
+    list-style: none;
+  }
+
+  .tasks-list li {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    padding: 0.25rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: var(--charcoal-light);
+  }
+
+  .tasks-list li input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .tasks-list li input[type="checkbox"]:checked {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+
+  .tasks-list li input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: -1px;
+    left: 2px;
+    font-size: 0.7rem;
+    color: white;
+    font-weight: 700;
+  }
+
+  .tasks-list li input[type="checkbox"]:hover {
+    border-color: var(--sage);
+  }
+
+  .day-card-footer {
+    background: var(--sage-faint);
+    padding: 0.85rem 1.25rem 0.85rem calc(72px + 1.25rem);
+    border-top: 1px solid rgba(156,175,136,0.15);
+  }
+
+  .pro-tip {
+    font-size: 0.82rem;
+    color: var(--charcoal-light);
+    font-style: italic;
+    line-height: 1.55;
+  }
+
+  .pro-tip strong {
+    font-style: normal;
+    color: var(--sage-dark);
+    font-weight: 600;
+  }
+
+  /* ── MODULE LEGEND ── */
+  .legend-section {
+    max-width: 820px;
+    margin: 2.5rem auto 0;
+    padding: 0 2rem;
+  }
+
+  .legend-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+  }
+
+  .legend-box h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  .legend-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 2rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--charcoal-light);
+  }
+
+  .legend-item .swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .legend-item .mod-num {
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+
+  /* ── COMPLETION SECTION ── */
+  .completion-section {
+    max-width: 820px;
+    margin: 2.5rem auto 3rem;
+    padding: 0 2rem;
+  }
+
+  .completion-box {
+    background: linear-gradient(135deg, var(--charcoal) 0%, #3D3D3D 100%);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .completion-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse 400px 200px at 50% 100%, rgba(156,175,136,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .completion-box h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+
+  .completion-box p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  .completion-badge {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--charcoal);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  /* ── FOOTER ── */
+  .plan-footer {
+    text-align: center;
+    padding: 1.5rem 2rem 2.5rem;
+    border-top: 1px solid var(--border);
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .plan-footer p {
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+
+  .plan-footer a {
+    color: var(--sage-dark);
+    text-decoration: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .plan-header h1 { font-size: 2rem; }
+    .intro-box { grid-template-columns: 1fr; gap: 1rem; }
+    .progress-grid { grid-template-columns: repeat(7, 1fr); }
+    .day-card-body {
+      grid-template-columns: 1fr;
+      padding-left: 1.25rem;
+      gap: 1rem;
+    }
+    .day-card-footer { padding-left: 1.25rem; }
+    .legend-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    @page {
+      size: A4;
+      margin: 1.5cm 1.5cm 2cm;
+    }
+
+    body {
+      background: white;
+      font-size: 10pt;
+    }
+
+    .plan-header {
+      background: var(--charcoal) !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      padding: 2rem 1.5rem 1.75rem;
+    }
+
+    .plan-header h1 { font-size: 1.8rem; }
+
+    .progress-day {
+      border-width: 1px;
+    }
+
+    .day-card {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      box-shadow: none !important;
+      margin-top: 0.75rem;
+      border-color: #ccc;
+    }
+
+    .day-card:hover { box-shadow: none; }
+
+    .day-number {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .day-card-footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .progress-day.completed {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .completion-box {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .intro-box, .progress-tracker, .legend-box, .day-card, .how-to-use-inner {
+      box-shadow: none;
+    }
+
+    .tasks-list li input[type="checkbox"] {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .week-divider {
+      break-before: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="plan-header">
+  <div class="logo">Waves<span>AI</span> Academy</div>
+  <div class="header-badge">Student Practice Plan</div>
+  <h1>14-Day AI Mastery<br>Practice Plan</h1>
+  <p class="subtitle">Your daily roadmap from AI beginner to confident AI business builder. 30-60 minutes a day, real skills, real results.</p>
+</header>
+
+<!-- OVERVIEW STATS -->
+<section class="intro-section">
+  <div class="intro-box">
+    <div class="intro-stat">
+      <div class="number">14</div>
+      <div class="label">Days</div>
+    </div>
+    <div class="intro-stat">
+      <div class="number">8</div>
+      <div class="label">Modules Covered</div>
+    </div>
+    <div class="intro-stat">
+      <div class="number">42</div>
+      <div class="label">Practice Tasks</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="how-to-use">
+  <div class="how-to-use-inner">
+    <h3>How to Use This Plan</h3>
+    <p>Work through one day at a time. Each session is designed to take 30-60 minutes. Tick off each task as you complete it, and use the progress tracker below to visualise your journey. The plan follows the course modules in order, building your skills and confidence step by step. By Day 14, you will have a portfolio, a pricing strategy, and a launch-ready AI services business.</p>
+  </div>
+</section>
+
+<!-- PROGRESS TRACKER -->
+<section class="progress-section">
+  <div class="progress-tracker">
+    <h3>Your Progress</h3>
+    <div class="progress-grid">
+      <div class="progress-day" data-day="1" onclick="toggleDay(this)">1</div>
+      <div class="progress-day" data-day="2" onclick="toggleDay(this)">2</div>
+      <div class="progress-day" data-day="3" onclick="toggleDay(this)">3</div>
+      <div class="progress-day" data-day="4" onclick="toggleDay(this)">4</div>
+      <div class="progress-day" data-day="5" onclick="toggleDay(this)">5</div>
+      <div class="progress-day" data-day="6" onclick="toggleDay(this)">6</div>
+      <div class="progress-day" data-day="7" onclick="toggleDay(this)">7</div>
+      <div class="progress-day" data-day="8" onclick="toggleDay(this)">8</div>
+      <div class="progress-day" data-day="9" onclick="toggleDay(this)">9</div>
+      <div class="progress-day" data-day="10" onclick="toggleDay(this)">10</div>
+      <div class="progress-day" data-day="11" onclick="toggleDay(this)">11</div>
+      <div class="progress-day" data-day="12" onclick="toggleDay(this)">12</div>
+      <div class="progress-day" data-day="13" onclick="toggleDay(this)">13</div>
+      <div class="progress-day" data-day="14" onclick="toggleDay(this)">14</div>
+    </div>
+    <div class="progress-bar-container">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-text" id="progressText">0 / 14 days</span>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE LEGEND -->
+<section class="legend-section">
+  <div class="legend-box">
+    <h3>Course Modules</h3>
+    <div class="legend-grid">
+      <div class="legend-item"><span class="swatch" style="background:var(--module-1)"></span><span class="mod-num">M1</span> The AI Landscape</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--module-5)"></span><span class="mod-num">M5</span> Finding &amp; Landing Clients</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--module-2)"></span><span class="mod-num">M2</span> Your AI Toolkit</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--module-6)"></span><span class="mod-num">M6</span> Pricing &amp; Packaging</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--module-3)"></span><span class="mod-num">M3</span> Building AI Systems</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--module-7)"></span><span class="mod-num">M7</span> Delivery &amp; Operations</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--module-4)"></span><span class="mod-num">M4</span> AI Content Creation</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--module-8)"></span><span class="mod-num">M8</span> Scaling Your AI Business</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ WEEK 1 ═══════════════════ -->
+
+<div class="week-divider">
+  <div class="week-divider-inner">
+    <span class="week-label">Week 1 — Foundations &amp; Skills</span>
+  </div>
+</div>
+
+<div class="days-container">
+
+<!-- DAY 1 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-1)">
+      <span class="num">01</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">The AI Revolution: Why Now</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-1)"></span>Module 1 — The AI Landscape</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 30 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Understand what AI agents are and how they differ from simple chatbots</li>
+        <li>Identify the top 5 industries spending the most on AI services right now</li>
+        <li>Map out your personal "why" for building an AI business</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Research 3 real businesses using AI agents (customer support, lead gen, or content). Write one sentence about each explaining what the AI does and why it saves money.</li>
+        <li><input type="checkbox"> Open ChatGPT and ask it: "Act as a business consultant. What are the top 5 ways small businesses use AI agents in 2026?" Save the response.</li>
+        <li><input type="checkbox"> Write your personal AI Business Goal Statement: "In 90 days, I will [specific outcome] by offering [type of AI service] to [type of client]."</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> The AI services market is projected to reach $300B+ by 2027. You are not late — you are early. The businesses that need AI the most have not started looking yet.</p>
+  </div>
+</article>
+
+<!-- DAY 2 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-2)">
+      <span class="num">02</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">ChatGPT Power User</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-2)"></span>Module 2 — Your AI Toolkit</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 45 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Master the art of writing precise, high-value prompts that produce professional outputs</li>
+        <li>Understand temperature, system prompts, and custom instructions</li>
+        <li>Create your first reusable prompt template for a business use case</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Write 5 prompts that follow the CRISP framework (Context, Role, Instructions, Specifics, Parameters). Test each one and rate the output quality from 1-10.</li>
+        <li><input type="checkbox"> Create a "Client Email Responder" prompt template: give ChatGPT a business type, tone, and situation, and have it generate a professional email. Test with 3 different scenarios.</li>
+        <li><input type="checkbox"> Build a Custom GPT instruction set (or system prompt) for a fictional restaurant that handles menu questions, booking requests, and complaints. Test 5 different customer messages.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> The difference between a £50/month AI user and a £5,000/month AI consultant is prompt engineering. Your prompts are your product — treat them like intellectual property.</p>
+  </div>
+</article>
+
+<!-- DAY 3 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-2)">
+      <span class="num">03</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">Visual AI: Leonardo &amp; Image Generation</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-2)"></span>Module 2 — Your AI Toolkit</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 45 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Navigate Leonardo AI's interface and understand model selection for different styles</li>
+        <li>Write image prompts that produce consistent, brand-aligned visuals</li>
+        <li>Learn when to use AI images vs stock photos for client work</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Create a set of 5 product images for a fictional skincare brand using Leonardo AI. Use a consistent style, colour palette, and lighting across all 5 images.</li>
+        <li><input type="checkbox"> Generate 3 social media graphics (Instagram post dimensions) for a fictional coffee shop. Experiment with different models and compare results.</li>
+        <li><input type="checkbox"> Document your best prompts in a "Visual AI Swipe File" — save the prompt, the settings used, and the output for future reference.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> Clients do not buy "AI images" — they buy consistent brand visuals delivered in hours instead of days. Always present your work as a brand asset, never as "something AI made."</p>
+  </div>
+</article>
+
+<!-- DAY 4 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-2)">
+      <span class="num">04</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">Voice &amp; Audio: ElevenLabs Mastery</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-2)"></span>Module 2 — Your AI Toolkit</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 40 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Generate professional voiceovers using ElevenLabs with correct pacing and emotion</li>
+        <li>Understand voice cloning ethics and commercial licensing requirements</li>
+        <li>Identify 3 profitable voiceover services you can offer to clients</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Write a 60-second script for a fictional podcast intro. Generate it with 3 different ElevenLabs voices. Compare tone, clarity, and naturalness.</li>
+        <li><input type="checkbox"> Create a professional IVR (phone menu) recording: "Thank you for calling [Business]. Press 1 for Sales, Press 2 for Support..." using an appropriate voice and pacing.</li>
+        <li><input type="checkbox"> Record yourself reading 30 seconds of text, then clone your voice in ElevenLabs. Compare the clone to the original and note the differences.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> Voiceover artists charge £200-500 per script. With ElevenLabs, you can offer "unlimited revisions, same-day turnaround" — something traditional voiceover cannot compete with.</p>
+  </div>
+</article>
+
+<!-- DAY 5 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-3)">
+      <span class="num">05</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">Build Your First AI Chatbot</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-3)"></span>Module 3 — Building AI Systems</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 60 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Build a functional AI chatbot using a no-code platform (Voiceflow, Botpress, or Tidio)</li>
+        <li>Design a conversation flow that handles FAQs, collects leads, and routes to humans when needed</li>
+        <li>Understand how to embed a chatbot on any website</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Sign up for a free Voiceflow or Botpress account. Build a chatbot for a fictional dental practice that answers the top 10 patient questions (hours, services, pricing, booking).</li>
+        <li><input type="checkbox"> Add a "lead capture" flow: when the bot cannot answer a question, it collects the visitor's name, email, and question, then confirms a team member will follow up.</li>
+        <li><input type="checkbox"> Test your chatbot with 10 different questions (including tricky edge cases). Fix any responses that feel robotic or unhelpful. Screenshot the final conversation flows.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> A single AI chatbot can replace a £2,000/month customer service hire for a small business. That is not a feature — that is a transformation. Lead with the ROI when you pitch this to clients.</p>
+  </div>
+</article>
+
+<!-- DAY 6 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-3)">
+      <span class="num">06</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">Automation Workflows with Make &amp; Zapier</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-3)"></span>Module 3 — Building AI Systems</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 60 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Understand the difference between Make (Integromat) and Zapier, and when to use each</li>
+        <li>Build a multi-step automation that connects 3+ tools with AI in the middle</li>
+        <li>Identify the most common automation workflows businesses pay for</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Build a "Lead-to-Response" automation: when a new form submission arrives (Google Forms), use ChatGPT to draft a personalised response, then send it via Gmail. Test with 3 sample submissions.</li>
+        <li><input type="checkbox"> Create a "Social Media Repurposer" workflow: take a blog post URL, use AI to generate 5 social media captions (LinkedIn, X, Instagram, Facebook, TikTok), and save them to a Google Sheet.</li>
+        <li><input type="checkbox"> Document both automations with screenshots in a "Portfolio Piece" format — show the workflow diagram, explain the business value, and estimate time saved per month.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> Businesses do not care about "automations" — they care about getting 10 hours back per week. Always frame your automations in terms of time saved and money recovered.</p>
+  </div>
+</article>
+
+<!-- DAY 7 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-4)">
+      <span class="num">07</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">AI Content Machine: Video &amp; Social</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-4)"></span>Module 4 — AI Content Creation</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 60 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Create a professional AI-generated video using D-ID or HeyGen with a talking avatar</li>
+        <li>Build a complete social media content pack (post, carousel, video, caption) using only AI tools</li>
+        <li>Understand content creation as a recurring revenue service</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Write a 45-second "Welcome to Our Business" script using ChatGPT. Generate an AI avatar video with D-ID or HeyGen. Add a voiceover from ElevenLabs if the avatar voice is not sufficient.</li>
+        <li><input type="checkbox"> Create a "1 Week Content Pack" for a fictional personal trainer: 7 Instagram posts (image + caption), 2 Reels scripts, and 1 carousel. Use Leonardo for images and ChatGPT for copy.</li>
+        <li><input type="checkbox"> Time yourself: how long did the full content pack take? Calculate what you would charge per pack (aim for £300-500). This is your first productised service.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> Content creation is the easiest AI service to sell because every business needs it, every business hates doing it, and AI makes it 10x faster. This alone can be a £3K/month business.</p>
+  </div>
+</article>
+
+</div><!-- end days-container -->
+
+<!-- ═══════════════════ WEEK 2 ═══════════════════ -->
+
+<div class="week-divider">
+  <div class="week-divider-inner">
+    <span class="week-label">Week 2 — Business &amp; Launch</span>
+  </div>
+</div>
+
+<div class="days-container">
+
+<!-- DAY 8 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-4)">
+      <span class="num">08</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">Build Your AI Portfolio</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-4)"></span>Module 4 — AI Content Creation</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 60 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Compile your best work from Days 1-7 into a professional portfolio</li>
+        <li>Learn how to present AI-generated work as case studies with measurable results</li>
+        <li>Create a "before and after" narrative that sells the transformation</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Create 3 portfolio case studies from your practice work. Each should include: the problem, your AI solution, the tools used, visual samples, and an estimated ROI for the fictional client.</li>
+        <li><input type="checkbox"> Build a simple portfolio page using Carrd, Notion, or Canva. Include your photo/brand, a one-line positioning statement, your 3 case studies, and a contact form.</li>
+        <li><input type="checkbox"> Write your "AI Services Bio" (150 words max): who you help, what you do, and why AI-powered services deliver better results. This is your LinkedIn summary and cold email intro.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> You do not need 50 clients to have a portfolio. Three well-crafted case studies (even from fictional projects) are more convincing than a blank page. Action beats perfection.</p>
+  </div>
+</article>
+
+<!-- DAY 9 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-5)">
+      <span class="num">09</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">Finding Clients Who Need AI</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-5)"></span>Module 5 — Finding &amp; Landing Clients</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 45 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Identify businesses that are actively struggling with problems AI can solve</li>
+        <li>Master the "AI Audit" approach — offering a free review that leads to paid work</li>
+        <li>Build a prospect list of 20 businesses you could approach this week</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Pick a niche (e.g., estate agents, gyms, restaurants, coaches). Find 20 businesses in that niche on Google Maps or LinkedIn. For each, note one visible problem AI could fix (slow response time, no chatbot, generic content).</li>
+        <li><input type="checkbox"> Write an "AI Audit" template: a 1-page document that analyses a business's online presence and suggests 3 AI improvements. Complete one audit for a real local business as practice.</li>
+        <li><input type="checkbox"> Draft 2 cold outreach messages (one email, one LinkedIn DM) that lead with value, reference the audit, and propose a 15-minute call. No selling — just offering insights.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> The best clients are not searching for "AI services." They are Googling "how to respond to customers faster" or "why is nobody visiting my website." Solve the pain, not the technology.</p>
+  </div>
+</article>
+
+<!-- DAY 10 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-5)">
+      <span class="num">10</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">The Outreach Sprint</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-5)"></span>Module 5 — Finding &amp; Landing Clients</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 45 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Execute a structured outreach campaign: send 10 personalised messages in one session</li>
+        <li>Handle common objections ("We already tried AI," "It is too expensive," "We are too small")</li>
+        <li>Set up a simple CRM or spreadsheet to track your outreach pipeline</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Send 10 personalised outreach messages (email or LinkedIn) to businesses from your Day 9 list. Each message must reference something specific about their business — no copy-paste templates.</li>
+        <li><input type="checkbox"> Create a tracking spreadsheet with columns: Business Name, Contact, Channel, Date Sent, Response, Follow-Up Date, Status. Log all 10 contacts.</li>
+        <li><input type="checkbox"> Write 3 "objection scripts" — short, confident responses to: "AI is just a fad," "We cannot afford it," and "We tried a chatbot and it was terrible." Practice saying them out loud.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> Most people quit after 3 messages with no reply. The data shows it takes 5-7 touchpoints to get a response. Persistence is not annoying — it is professional. Follow up.</p>
+  </div>
+</article>
+
+<!-- DAY 11 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-6)">
+      <span class="num">11</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">Price Like a Pro</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-6)"></span>Module 6 — Pricing &amp; Packaging</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 45 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Understand value-based pricing vs hourly rates (and why hourly kills your income)</li>
+        <li>Create 3 service packages at different price points (Starter, Growth, Premium)</li>
+        <li>Learn the psychology of pricing anchoring and how to make your middle tier irresistible</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Design your 3-tier pricing menu for your primary AI service. Include: package name, what is included, what is excluded, price, and a one-line value statement. Make the middle tier the obvious choice.</li>
+        <li><input type="checkbox"> Create a 1-page "Service Proposal" template in Canva or Google Docs. Include: client name, problem summary, proposed solution, package options, timeline, and next steps. This is what you send after a discovery call.</li>
+        <li><input type="checkbox"> Role-play a pricing conversation with ChatGPT: prompt it to act as a sceptical business owner asking about costs. Practice justifying your price by referencing ROI, not hours worked.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> Never say "It costs £500." Say "This system will save you £2,000/month in staff time — the investment is £500 to set it up." Same price, completely different conversation.</p>
+  </div>
+</article>
+
+<!-- DAY 12 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-7)">
+      <span class="num">12</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">Client Delivery Systems</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-7)"></span>Module 7 — Delivery &amp; Operations</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 50 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Set up a professional onboarding process that makes clients feel confident from day one</li>
+        <li>Create SOPs (Standard Operating Procedures) for your core services so delivery is consistent</li>
+        <li>Build a client communication system with regular updates and clear milestones</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Create a "Client Welcome Kit" document: includes a welcome message, project timeline, what you need from them (logins, brand assets, etc.), communication channels, and FAQ. Make it look professional.</li>
+        <li><input type="checkbox"> Write an SOP for your most complex service (e.g., chatbot setup). Break it into numbered steps from kickoff to handover. Include estimated time per step. This is your delivery playbook.</li>
+        <li><input type="checkbox"> Set up a free project management tool (Trello, Notion, or ClickUp). Create a template board/page for client projects with stages: Onboarding, In Progress, Review, Delivered, Follow-Up.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> The number one reason freelancers lose clients is not bad work — it is bad communication. A weekly 2-minute update email keeps clients happy, even when you are still working on their project.</p>
+  </div>
+</article>
+
+<!-- DAY 13 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-7)">
+      <span class="num">13</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">Recurring Revenue &amp; Retainers</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-7)"></span>Module 7 — Delivery &amp; Operations</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 45 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Understand how to turn one-off projects into monthly retainers (the key to predictable income)</li>
+        <li>Design a "maintenance and optimisation" package that clients renew every month</li>
+        <li>Calculate your monthly recurring revenue target and reverse-engineer the client numbers</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Design a monthly retainer offer: "AI Content &amp; Chatbot Management" (or similar). Define exactly what is included monthly: number of content pieces, chatbot updates, performance reports, response time SLA.</li>
+        <li><input type="checkbox"> Create a "Month 1 Report" template that you would send a retainer client. Include: metrics overview, what was delivered, optimisations made, and recommendations for next month.</li>
+        <li><input type="checkbox"> Do the maths: If your retainer is £500/month, how many clients do you need for £5K/month? £10K/month? Write down your 90-day client acquisition target.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> 10 retainer clients at £500/month = £5,000/month = £60,000/year. That is a full-time income from a laptop. The goal is not more clients — it is the right clients who stay.</p>
+  </div>
+</article>
+
+<!-- DAY 14 -->
+<article class="day-card">
+  <div class="day-card-header">
+    <div class="day-number" style="background:var(--module-8)">
+      <span class="num">14</span>
+      <span class="day-label">Day</span>
+    </div>
+    <div class="day-title-area">
+      <h2 class="day-title">Launch Day: Your AI Business is Live</h2>
+      <div class="day-meta">
+        <span class="module-tag"><span class="dot" style="background:var(--module-8)"></span>Module 8 — Scaling Your AI Business</span>
+        <span class="time-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 60 mins</span>
+      </div>
+    </div>
+  </div>
+  <div class="day-card-body">
+    <div class="objectives-section">
+      <h4>Learning Objectives</h4>
+      <ul class="objectives-list">
+        <li>Finalise and publish all assets: portfolio, pricing, outreach templates, and delivery systems</li>
+        <li>Create a 30-day action plan with weekly revenue targets and daily habits</li>
+        <li>Understand the scaling levers: hiring, automating delivery, raising prices, and adding services</li>
+      </ul>
+    </div>
+    <div class="tasks-section">
+      <h4>Practice Tasks</h4>
+      <ul class="tasks-list">
+        <li><input type="checkbox"> Publish your portfolio (make it live). Update your LinkedIn headline to reflect your AI services positioning. Post your first piece of content about AI for business (a tip, insight, or case study).</li>
+        <li><input type="checkbox"> Write your "30-Day Launch Plan" on one page: Week 1 goals (outreach targets), Week 2 (first client), Week 3 (deliver + get testimonial), Week 4 (refine + scale). Pin it where you will see it daily.</li>
+        <li><input type="checkbox"> Send 5 more outreach messages today. Follow up with anyone from Day 10 who has not responded. Book at least 1 discovery call this week. Your business starts now — not after "one more course."</li>
+      </ul>
+    </div>
+  </div>
+  <div class="day-card-footer">
+    <p class="pro-tip"><strong>Pro Tip:</strong> "The best time to start was yesterday. The second best time is now." You have the skills, the tools, and the plan. The only thing between you and £10K/month is consistent action. Go build it.</p>
+  </div>
+</article>
+
+</div><!-- end days-container -->
+
+<!-- COMPLETION SECTION -->
+<section class="completion-section">
+  <div class="completion-box">
+    <div class="completion-badge">Congratulations</div>
+    <h2>You Have Completed the 14-Day Plan</h2>
+    <p>You now have the AI skills, a portfolio, pricing packages, client outreach systems, and a delivery process. You are not "learning about AI" anymore — you are running an AI business. Keep going. Keep building. Keep earning.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="plan-footer">
+  <p>&copy; 2026 WavesAI Academy &mdash; AI Agents &amp; Automation Course &mdash; <a href="https://wavesaiacademy.com">wavesaiacademy.com</a></p>
+</footer>
+
+<script>
+  // Progress tracker persistence with localStorage
+  const STORAGE_KEY = 'wavesai-14day-progress';
+
+  function loadProgress() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const days = JSON.parse(saved);
+        days.forEach(d => {
+          const el = document.querySelector(`.progress-day[data-day="${d}"]`);
+          if (el) el.classList.add('completed');
+        });
+      }
+    } catch (e) {}
+    updateProgressBar();
+  }
+
+  function saveProgress() {
+    const completed = [...document.querySelectorAll('.progress-day.completed')]
+      .map(el => parseInt(el.dataset.day));
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(completed));
+    } catch (e) {}
+  }
+
+  function toggleDay(el) {
+    el.classList.toggle('completed');
+    saveProgress();
+    updateProgressBar();
+  }
+
+  function updateProgressBar() {
+    const total = 14;
+    const completed = document.querySelectorAll('.progress-day.completed').length;
+    const fill = document.getElementById('progressFill');
+    const text = document.getElementById('progressText');
+    if (fill) fill.style.width = ((completed / total) * 100) + '%';
+    if (text) text.textContent = completed + ' / ' + total + ' days';
+  }
+
+  // Checkbox persistence
+  const CHECKBOX_KEY = 'wavesai-14day-checkboxes';
+
+  function loadCheckboxes() {
+    try {
+      const saved = localStorage.getItem(CHECKBOX_KEY);
+      if (saved) {
+        const states = JSON.parse(saved);
+        const boxes = document.querySelectorAll('.tasks-list input[type="checkbox"]');
+        boxes.forEach((box, i) => {
+          if (states[i]) box.checked = true;
+        });
+      }
+    } catch (e) {}
+  }
+
+  function saveCheckboxes() {
+    const boxes = document.querySelectorAll('.tasks-list input[type="checkbox"]');
+    const states = [...boxes].map(b => b.checked);
+    try {
+      localStorage.setItem(CHECKBOX_KEY, JSON.stringify(states));
+    } catch (e) {}
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadProgress();
+    loadCheckboxes();
+
+    document.querySelectorAll('.tasks-list input[type="checkbox"]').forEach(box => {
+      box.addEventListener('change', saveCheckboxes);
+    });
+  });
+</script>
+
+</body>
+</html>
