@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>90-Minute Workshop Session Plan — WavesAI Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #9CAF88;
+    --sage-light: #E8EDE3;
+    --sage-dark: #6B7D5A;
+    --sage-faint: #F4F7F1;
+    --navy: #1B2D4F;
+    --navy-light: #2A4270;
+    --warm-white: #FAFAF8;
+    --cream: #F5F3EE;
+    --border: #E2E0DB;
+    --text: #333333;
+    --text-light: #777777;
+    --accent-gold: #C4A962;
+    --highlight: #E8F0FE;
+    --highlight-border: #4A7AB5;
+    --demo-color: #5B8C5A;
+    --demo-bg: #EFF5EE;
+    --close-color: #8B6914;
+    --close-bg: #FDF8EC;
+    --close-border: #D4A843;
+    --interactive-color: #6B5B95;
+    --interactive-bg: #F0ECF5;
+    --interactive-border: #9B8EC4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HEADER */
+  .plan-header {
+    background: linear-gradient(135deg, #1B2D4F 0%, #253D66 50%, #1B2D4F 100%);
+    color: white;
+    padding: 3.5rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .plan-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse 600px 300px at 20% 80%, rgba(156,175,136,0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 400px 400px at 80% 20%, rgba(156,175,136,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .plan-header .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .plan-header .logo span {
+    color: white;
+  }
+
+  .plan-header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+
+  .plan-header .subtitle {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    max-width: 620px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .header-badge {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 1rem;
+  }
+
+  .stats-bar-inner {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .stat-item .number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--sage-dark);
+    line-height: 1;
+  }
+
+  .stat-item .label {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* CHECKLIST AT TOP */
+  .prep-checklist {
+    max-width: 820px;
+    margin: 1.5rem auto 0;
+    padding: 0 2rem;
+  }
+
+  .prep-checklist-box {
+    background: white;
+    border: 2px solid var(--navy);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .prep-checklist-header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: white;
+    padding: 1.25rem 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .prep-checklist-header svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  .prep-checklist-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .prep-checklist-header p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65);
+    margin-left: auto;
+  }
+
+  .prep-checklist-body {
+    padding: 1.5rem 1.75rem;
+  }
+
+  .prep-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 2rem;
+  }
+
+  .prep-item {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    padding: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text);
+  }
+
+  .prep-item .check-icon {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--sage);
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sage);
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+
+  /* HOW TO USE */
+  .how-to-use {
+    max-width: 820px;
+    margin: 1.5rem auto 0;
+    padding: 0 2rem;
+  }
+
+  .how-to-use-inner {
+    background: var(--sage-faint);
+    border-left: 3px solid var(--sage);
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .how-to-use h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--sage-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .how-to-use p {
+    font-size: 0.9rem;
+    color: var(--navy);
+    line-height: 1.65;
+  }
+
+  /* SECTION DIVIDERS */
+  .section-divider {
+    max-width: 820px;
+    margin: 2.5rem auto 0;
+    padding: 0 2rem;
+  }
+
+  .section-divider-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-divider-inner::before,
+  .section-divider-inner::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1.25rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .section-label.opening { background: var(--highlight); color: var(--highlight-border); }
+  .section-label.demo { background: var(--demo-bg); color: var(--demo-color); }
+  .section-label.overview { background: var(--sage-light); color: var(--sage-dark); }
+  .section-label.interactive { background: var(--interactive-bg); color: var(--interactive-color); }
+  .section-label.close { background: var(--close-bg); color: var(--close-color); }
+  .section-label.qa { background: #FEECEC; color: #A04040; }
+
+  /* BLOCK CARDS */
+  .blocks-container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .block-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-top: 1.25rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    page-break-inside: avoid;
+  }
+
+  .block-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  .block-card-header {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .time-badge {
+    width: 90px;
+    min-height: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    padding: 0.5rem;
+  }
+
+  .time-badge .time-range {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+
+  .time-badge .duration {
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+    margin-top: 3px;
+  }
+
+  .block-title-area {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .block-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+
+  .block-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .purpose-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .purpose-tag .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* BORDER COLORS FOR SECTIONS */
+  .block-card.opening-block { border-left: 4px solid var(--highlight-border); }
+  .block-card.demo-block { border-left: 4px solid var(--demo-color); }
+  .block-card.overview-block { border-left: 4px solid var(--sage); }
+  .block-card.interactive-block { border-left: 4px solid var(--interactive-border); }
+  .block-card.close-block { border-left: 4px solid var(--close-border); }
+  .block-card.qa-block { border-left: 4px solid #C06060; }
+
+  /* CARD BODY */
+  .block-card-body {
+    padding: 1.5rem 1.25rem 1.5rem calc(90px + 1.25rem);
+  }
+
+  .speaker-note {
+    background: var(--sage-faint);
+    border-left: 3px solid var(--sage);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--navy);
+    font-style: italic;
+  }
+
+  .speaker-note strong {
+    font-style: normal;
+    color: var(--sage-dark);
+    font-weight: 600;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .speaker-note.hook-note {
+    background: var(--highlight);
+    border-left-color: var(--highlight-border);
+  }
+
+  .speaker-note.hook-note strong {
+    color: var(--highlight-border);
+  }
+
+  .speaker-note.close-note {
+    background: var(--close-bg);
+    border-left-color: var(--close-border);
+  }
+
+  .speaker-note.close-note strong {
+    color: var(--close-color);
+  }
+
+  .talking-points {
+    margin-bottom: 1.25rem;
+  }
+
+  .talking-points h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 0.65rem;
+  }
+
+  .talking-points ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .talking-points li {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    padding: 0.25rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--text);
+  }
+
+  .talking-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.58rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+  }
+
+  .talking-points li.sub-point {
+    padding-left: 2.5rem;
+    font-size: 0.84rem;
+    color: var(--text-light);
+  }
+
+  .talking-points li.sub-point::before {
+    left: 1.25rem;
+    width: 4px;
+    height: 4px;
+    background: var(--border);
+  }
+
+  /* KEY POINT CALLOUT */
+  .key-point {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 0.85rem 1.15rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .key-point .kp-label {
+    background: var(--sage);
+    color: var(--navy);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* STATS CALLOUT */
+  .stats-callout {
+    background: var(--highlight);
+    border-left: 3px solid var(--highlight-border);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .stats-callout ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .stats-callout li {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    padding: 0.2rem 0;
+    padding-left: 1.1rem;
+    position: relative;
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .stats-callout li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--highlight-border);
+  }
+
+  /* AGENT GRID */
+  .agent-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .agent-item {
+    background: var(--sage-faint);
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .agent-item .agent-num {
+    display: inline-block;
+    background: var(--sage);
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    margin-right: 0.35rem;
+  }
+
+  .agent-item .agent-name {
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .agent-item .agent-pitch {
+    display: block;
+    color: var(--sage-dark);
+    font-style: italic;
+    margin-top: 0.15rem;
+    padding-left: 1.6rem;
+  }
+
+  .agent-item .agent-example {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    padding-left: 1.6rem;
+    margin-top: 0.1rem;
+  }
+
+  /* Q&A LIST */
+  .qa-list {
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+
+  .qa-list li {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .qa-list li:last-child {
+    border-bottom: none;
+  }
+
+  .qa-list .question {
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.15rem;
+  }
+
+  .qa-list .answer {
+    color: var(--text);
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--sage-light);
+    margin-left: 0.25rem;
+  }
+
+  /* CARD FOOTER */
+  .block-card-footer {
+    background: var(--sage-faint);
+    padding: 0.85rem 1.25rem 0.85rem calc(90px + 1.25rem);
+    border-top: 1px solid rgba(156,175,136,0.15);
+  }
+
+  .block-goal {
+    font-size: 0.82rem;
+    color: var(--navy);
+    line-height: 1.55;
+  }
+
+  .block-goal strong {
+    color: var(--sage-dark);
+    font-weight: 600;
+  }
+
+  /* TIMELINE OVERVIEW */
+  .timeline-section {
+    max-width: 820px;
+    margin: 2.5rem auto 0;
+    padding: 0 2rem;
+  }
+
+  .timeline-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+  }
+
+  .timeline-box h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+
+  .timeline-bar {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 32px;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 4px;
+  }
+
+  .timeline-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    justify-content: center;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-light);
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  /* COMPLETION BOX */
+  .completion-section {
+    max-width: 820px;
+    margin: 2.5rem auto 3rem;
+    padding: 0 2rem;
+  }
+
+  .completion-box {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .completion-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse 400px 200px at 50% 100%, rgba(156,175,136,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .completion-box h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+
+  .completion-box p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  .completion-badge {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  /* FOOTER */
+  .plan-footer {
+    text-align: center;
+    padding: 1.5rem 2rem 2.5rem;
+    border-top: 1px solid var(--border);
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .plan-footer p {
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+
+  .plan-footer a {
+    color: var(--sage-dark);
+    text-decoration: none;
+  }
+
+  /* DESCRIPTION TEXT */
+  .description-text {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .plan-header h1 { font-size: 2rem; }
+    .stats-bar-inner { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .block-card-body { padding-left: 1.25rem; }
+    .block-card-footer { padding-left: 1.25rem; }
+    .agent-grid { grid-template-columns: 1fr; }
+    .prep-grid { grid-template-columns: 1fr; }
+    .timeline-bar { height: 24px; }
+    .timeline-segment { font-size: 0; }
+  }
+
+  @media (max-width: 480px) {
+    .stats-bar-inner { grid-template-columns: 1fr; }
+    .plan-header { padding: 2.5rem 1.25rem 2rem; }
+    .plan-header h1 { font-size: 1.7rem; }
+  }
+
+  /* PRINT STYLES */
+  @media print {
+    @page {
+      size: A4;
+      margin: 1.5cm 1.5cm 2cm;
+    }
+
+    body {
+      background: white;
+      font-size: 10pt;
+    }
+
+    .plan-header {
+      background: var(--navy) !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      padding: 2rem 1.5rem 1.75rem;
+    }
+
+    .plan-header h1 { font-size: 1.8rem; }
+
+    .block-card {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      box-shadow: none !important;
+      margin-top: 0.75rem;
+      border-color: #ccc;
+    }
+
+    .block-card:hover { box-shadow: none; }
+
+    .time-badge {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .block-card-footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .key-point {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .completion-box {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .prep-checklist-header {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .timeline-bar .timeline-segment {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .agent-item .agent-num {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .section-label {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .stats-bar-inner, .timeline-box, .block-card, .how-to-use-inner, .prep-checklist-box {
+      box-shadow: none;
+    }
+
+    .block-card.opening-block,
+    .block-card.demo-block,
+    .block-card.overview-block,
+    .block-card.interactive-block,
+    .block-card.close-block,
+    .block-card.qa-block {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .section-divider {
+      break-before: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="plan-header">
+  <div class="logo">Waves<span>AI</span> Academy</div>
+  <div class="header-badge">Session Plan</div>
+  <h1>90-Minute Workshop<br>Session Plan</h1>
+  <p class="subtitle">Your complete minute-by-minute guide to delivering a powerful AI workshop that converts.</p>
+</header>
+
+<!-- STATS BAR -->
+<section class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="number">90</div>
+      <div class="label">Minutes</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">3</div>
+      <div class="label">Live Demos</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">8</div>
+      <div class="label">Agents Overview</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">1</div>
+      <div class="label">Interactive Exercise</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO HAVE READY -->
+<section class="prep-checklist">
+  <div class="prep-checklist-box">
+    <div class="prep-checklist-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <h2>What to Have Ready</h2>
+      <p>Before you start</p>
+    </div>
+    <div class="prep-checklist-body">
+      <div class="prep-grid">
+        <div class="prep-item">
+          <div class="check-icon">&#10003;</div>
+          Laptop fully charged with charger nearby
+        </div>
+        <div class="prep-item">
+          <div class="check-icon">&#10003;</div>
+          WavesAI Studio logged in and tested
+        </div>
+        <div class="prep-item">
+          <div class="check-icon">&#10003;</div>
+          Slides loaded and projector tested
+        </div>
+        <div class="prep-item">
+          <div class="check-icon">&#10003;</div>
+          QR code printed (large, visible from back row)
+        </div>
+        <div class="prep-item">
+          <div class="check-icon">&#10003;</div>
+          Water bottle on your table
+        </div>
+        <div class="prep-item">
+          <div class="check-icon">&#10003;</div>
+          Backup prompts saved in notes app
+        </div>
+        <div class="prep-item">
+          <div class="check-icon">&#10003;</div>
+          Wi-Fi tested and backup hotspot ready
+        </div>
+        <div class="prep-item">
+          <div class="check-icon">&#10003;</div>
+          Browser tabs pre-opened: Studio, Make.com
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="how-to-use">
+  <div class="how-to-use-inner">
+    <h3>How to Use This Session Plan</h3>
+    <p>This is your presenter reference document. Each timed block shows exactly what to say, what to do, and when to do it. Speaker scripts are shown in green quote blocks. Key selling points are highlighted in navy callouts. Print this out and keep it on your table as a safety net, but aim to deliver from memory. The flow is designed to build excitement, demonstrate value, and close naturally.</p>
+  </div>
+</section>
+
+<!-- TIMELINE OVERVIEW -->
+<section class="timeline-section">
+  <div class="timeline-box">
+    <h3>Session Timeline at a Glance</h3>
+    <div class="timeline-bar">
+      <div class="timeline-segment" style="flex: 10; background: var(--highlight-border);">Opening</div>
+      <div class="timeline-segment" style="flex: 15; background: var(--demo-color);">Demo 1</div>
+      <div class="timeline-segment" style="flex: 15; background: #4A7A4A;">Demo 2</div>
+      <div class="timeline-segment" style="flex: 10; background: #7AAF6A;">Demo 3</div>
+      <div class="timeline-segment" style="flex: 10; background: var(--sage);">8 Agents</div>
+      <div class="timeline-segment" style="flex: 10; background: var(--interactive-border);">Exercise</div>
+      <div class="timeline-segment" style="flex: 12; background: var(--close-border);">The Close</div>
+      <div class="timeline-segment" style="flex: 8; background: #C06060;">Q&amp;A</div>
+    </div>
+    <div class="timeline-legend">
+      <div class="legend-item"><div class="legend-dot" style="background: var(--highlight-border);"></div> Opening (10 min)</div>
+      <div class="legend-item"><div class="legend-dot" style="background: var(--demo-color);"></div> Demo 1 (15 min)</div>
+      <div class="legend-item"><div class="legend-dot" style="background: #4A7A4A;"></div> Demo 2 (15 min)</div>
+      <div class="legend-item"><div class="legend-dot" style="background: #7AAF6A;"></div> Demo 3 (10 min)</div>
+      <div class="legend-item"><div class="legend-dot" style="background: var(--sage);"></div> 8 Agents (10 min)</div>
+      <div class="legend-item"><div class="legend-dot" style="background: var(--interactive-border);"></div> Exercise (10 min)</div>
+      <div class="legend-item"><div class="legend-dot" style="background: var(--close-border);"></div> The Close (12 min)</div>
+      <div class="legend-item"><div class="legend-dot" style="background: #C06060;"></div> Q&amp;A (8 min)</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ OPENING ═══════════════════ -->
+
+<div class="section-divider">
+  <div class="section-divider-inner">
+    <span class="section-label opening">Opening — The Hook</span>
+  </div>
+</div>
+
+<div class="blocks-container">
+
+<article class="block-card opening-block">
+  <div class="block-card-header">
+    <div class="time-badge" style="background: var(--highlight-border);">
+      <span class="time-range">0:00<br>10:00</span>
+      <span class="duration">10 min</span>
+    </div>
+    <div class="block-title-area">
+      <h2 class="block-title">The Hook</h2>
+      <div class="block-meta">
+        <span class="purpose-tag"><span class="dot" style="background: var(--highlight-border);"></span>Energy, Urgency, Connection</span>
+      </div>
+    </div>
+  </div>
+  <div class="block-card-body">
+
+    <p class="description-text"><strong>Welcome and Energy Setter (0:00 - 2:00)</strong> — Walk in with energy. Smile. Make eye contact with people in the front row. Start before everyone is fully settled.</p>
+
+    <div class="speaker-note hook-note">
+      <strong>Say This (The Hook Question)</strong>
+      "How many of you spent time this week writing emails, creating social media posts, or chasing leads? Raise your hand. Yeah, me too. Now — what if I told you that by the end of today, you'll see how AI can do all of that for you while you sleep?"
+    </div>
+
+    <p class="description-text"><strong>The Wake-Up Call (2:00 - 5:00)</strong> — Pause after each stat. Let the numbers land. Make eye contact with someone different for each one.</p>
+
+    <div class="stats-callout">
+      <ul>
+        <li>"40% of businesses will fail in the next 5 years if they don't adopt AI. Forty percent."</li>
+        <li>"The AI industry is worth 200 billion pounds right now — and it's growing every single day."</li>
+        <li>"Companies using AI are growing 3x faster than those who don't. Three times."</li>
+      </ul>
+    </div>
+
+    <p class="description-text"><strong>Three Short Stories (5:00 - 9:00)</strong> — Tell each story in under 90 seconds. Make them feel real and relatable.</p>
+
+    <div class="speaker-note">
+      <strong>Story 1 — The Business Owner</strong>
+      A small business owner was drowning in admin. Spending every evening writing emails, chasing invoices, posting on social media. She discovered AI, set up a few simple systems, and within a month she had her evenings back. Her business didn't just survive — it grew.
+    </div>
+
+    <div class="speaker-note">
+      <strong>Story 2 — The Non-Technical Person</strong>
+      A man with no coding experience, no technical background at all, sat down on a Saturday morning and by Sunday evening he had built a working AI customer service system. No programming. No developer fees. Just him, a laptop, and the right guidance.
+    </div>
+
+    <div class="speaker-note">
+      <strong>Story 3 — The Side Hustler</strong>
+      Someone started offering AI services to local businesses as a side hustle. Within three months, they were earning more from AI services than their 9-to-5 job. They quit. And they haven't looked back.
+    </div>
+
+    <div class="speaker-note hook-note">
+      <strong>Transition (9:00 - 10:00)</strong>
+      "Those aren't fairy tales. Those are real results from real people using exactly the tools I'm about to show you. Let me show you exactly what I mean..."
+    </div>
+
+    <div class="key-point">
+      <span class="kp-label">Key Point</span>
+      The goal of the opening is NOT to teach. It's to make the audience lean forward and think "I need to pay attention to this."
+    </div>
+  </div>
+  <div class="block-card-footer">
+    <p class="block-goal"><strong>Energy Check:</strong> By minute 10, the room should feel awake, curious, and slightly nervous about missing out.</p>
+  </div>
+</article>
+
+</div>
+
+
+<!-- ═══════════════════ LIVE DEMO 1 ═══════════════════ -->
+
+<div class="section-divider">
+  <div class="section-divider-inner">
+    <span class="section-label demo">Live Demo 1 — AI Image Generation</span>
+  </div>
+</div>
+
+<div class="blocks-container">
+
+<article class="block-card demo-block">
+  <div class="block-card-header">
+    <div class="time-badge" style="background: var(--demo-color);">
+      <span class="time-range">10:00<br>25:00</span>
+      <span class="duration">15 min</span>
+    </div>
+    <div class="block-title-area">
+      <h2 class="block-title">AI Image Generation</h2>
+      <div class="block-meta">
+        <span class="purpose-tag"><span class="dot" style="background: var(--demo-color);"></span>First WOW Moment — Visual Impact</span>
+      </div>
+    </div>
+  </div>
+  <div class="block-card-body">
+
+    <div class="talking-points">
+      <h4>Step-by-Step Demo Flow</h4>
+      <ul>
+        <li><strong>Open WavesAI Studio live on screen.</strong> Let the audience see the interface. Don't rush — let them take it in.</li>
+        <li><strong>Type the prompt:</strong> "professional product photo of luxury candle on marble table"</li>
+        <li><strong>Click generate.</strong> The image takes 15-20 seconds. This is your moment to talk.</li>
+      </ul>
+    </div>
+
+    <div class="speaker-note">
+      <strong>Say This While It Generates</strong>
+      "Right now, AI is creating a professional product image from scratch. No photographer, no studio, no lights, no editing. In the time it takes to make a coffee, AI just created a professional image that would cost you 200 pounds from a photographer."
+    </div>
+
+    <p class="description-text"><strong>Show the result.</strong> React naturally. Point out the quality — the lighting, the composition, the realism. Let the audience react too.</p>
+
+    <div class="talking-points">
+      <h4>Audience Participation Image</h4>
+      <ul>
+        <li>Ask the audience: "Right, someone give me a product. Any product. A shoe, a perfume bottle, a pizza — anything."</li>
+        <li>Take a suggestion and type it in as a new prompt live</li>
+        <li>While it generates, build on the energy: "Watch this — your product idea, generated in seconds"</li>
+        <li>Show the result. Ask the person who suggested it: "Would you use this on your website?"</li>
+      </ul>
+    </div>
+
+    <div class="key-point">
+      <span class="kp-label">Key Point</span>
+      "This is just ONE of 8 AI systems you can offer to businesses. We've only been going 15 minutes and you've already seen something most business owners have never seen."
+    </div>
+  </div>
+  <div class="block-card-footer">
+    <p class="block-goal"><strong>Energy Check:</strong> Audience should be visibly impressed. You should hear reactions — "wow", "no way", whispers to neighbours.</p>
+  </div>
+</article>
+
+</div>
+
+
+<!-- ═══════════════════ LIVE DEMO 2 ═══════════════════ -->
+
+<div class="section-divider">
+  <div class="section-divider-inner">
+    <span class="section-label demo">Live Demo 2 — AI Content &amp; Voice</span>
+  </div>
+</div>
+
+<div class="blocks-container">
+
+<article class="block-card demo-block">
+  <div class="block-card-header">
+    <div class="time-badge" style="background: #4A7A4A;">
+      <span class="time-range">25:00<br>40:00</span>
+      <span class="duration">15 min</span>
+    </div>
+    <div class="block-title-area">
+      <h2 class="block-title">AI Content &amp; Voice</h2>
+      <div class="block-meta">
+        <span class="purpose-tag"><span class="dot" style="background: #4A7A4A;"></span>Speed &amp; Scale — The Money Demo</span>
+      </div>
+    </div>
+  </div>
+  <div class="block-card-body">
+
+    <p class="description-text"><strong>Marketing Email Demo (25:00 - 30:00)</strong></p>
+
+    <div class="talking-points">
+      <h4>Step-by-Step Demo Flow</h4>
+      <ul>
+        <li><strong>Open the content generation tool.</strong> Type the prompt: "Write a marketing email for a local bakery announcing a new sourdough bread"</li>
+        <li><strong>Hit generate.</strong> The result appears in seconds.</li>
+        <li>Read a few lines of the email out loud to the audience. Point out the subject line, the call to action, the professional tone.</li>
+      </ul>
+    </div>
+
+    <div class="speaker-note">
+      <strong>Say This</strong>
+      "A full professional marketing email in 10 seconds. Think about that. Now imagine doing this for 50 clients. For 100 clients. Each one gets a unique, personalised email and you didn't write a single word."
+    </div>
+
+    <p class="description-text"><strong>Voiceover Demo (30:00 - 35:00)</strong> — Switch to the Text-to-Speech tool.</p>
+
+    <div class="talking-points">
+      <h4>Voice Generation</h4>
+      <ul>
+        <li>Take a line from the email you just generated and paste it into the TTS tool</li>
+        <li>Select a professional voice. Generate the audio.</li>
+        <li>Play it for the room. Let them hear how natural it sounds.</li>
+      </ul>
+    </div>
+
+    <div class="speaker-note">
+      <strong>Say This</strong>
+      "That's not a human voice artist. That's AI. No recording studio, no voice talent fees, no scheduling. You type the words, AI speaks them. Professionally. In any language."
+    </div>
+
+    <p class="description-text"><strong>Video Editor Tease (35:00 - 40:00)</strong> — Briefly show the Video Editor combining visuals and voice.</p>
+
+    <div class="talking-points">
+      <h4>Quick Show</h4>
+      <ul>
+        <li>Show how the image from Demo 1 and the voiceover can be combined into a video ad</li>
+        <li>Don't do a full video build — just show the interface and a pre-made example if possible</li>
+        <li>The point is: "These tools work together. One flows into the next."</li>
+      </ul>
+    </div>
+
+    <div class="key-point">
+      <span class="kp-label">Key Point</span>
+      "Businesses pay 500 to 2,000 pounds for this kind of content — the email, the voiceover, the video. You just watched AI create it all in under 5 minutes."
+    </div>
+  </div>
+  <div class="block-card-footer">
+    <p class="block-goal"><strong>Energy Check:</strong> The audience should now be thinking about money. "I could charge for this." That's exactly the thought you want.</p>
+  </div>
+</article>
+
+</div>
+
+
+<!-- ═══════════════════ LIVE DEMO 3 ═══════════════════ -->
+
+<div class="section-divider">
+  <div class="section-divider-inner">
+    <span class="section-label demo">Live Demo 3 — AI Automation</span>
+  </div>
+</div>
+
+<div class="blocks-container">
+
+<article class="block-card demo-block">
+  <div class="block-card-header">
+    <div class="time-badge" style="background: #7AAF6A;">
+      <span class="time-range">40:00<br>50:00</span>
+      <span class="duration">10 min</span>
+    </div>
+    <div class="block-title-area">
+      <h2 class="block-title">AI Automation Overview</h2>
+      <div class="block-meta">
+        <span class="purpose-tag"><span class="dot" style="background: #7AAF6A;"></span>The "While You Sleep" Proof</span>
+      </div>
+    </div>
+  </div>
+  <div class="block-card-body">
+
+    <div class="talking-points">
+      <h4>Step-by-Step Demo Flow</h4>
+      <ul>
+        <li><strong>Open Make.com (or similar automation tool)</strong> and show a simple workflow on screen</li>
+        <li>Walk through the flow visually: "A customer fills in this form on a website..."</li>
+        <li class="sub-point">Step 1: Form submitted</li>
+        <li class="sub-point">Step 2: Customer automatically added to a database</li>
+        <li class="sub-point">Step 3: Welcome email sent instantly</li>
+        <li class="sub-point">Step 4: Follow-up email scheduled for 3 days later</li>
+        <li class="sub-point">Step 5: Notification sent to the business owner</li>
+        <li>Point at each step as you explain it. Make it visual and easy to follow.</li>
+      </ul>
+    </div>
+
+    <div class="speaker-note">
+      <strong>Say This</strong>
+      "This entire workflow runs automatically. No human involved. A customer fills in a form at 2am, and by the time the business owner wakes up, the customer has already received a welcome email, been added to the system, and has a follow-up scheduled. Set it up once — it works 24/7 without you."
+    </div>
+
+    <div class="speaker-note">
+      <strong>Connect It Back</strong>
+      "Remember the opening question? Writing emails, creating content, chasing leads. This is how you stop doing all of that manually. You build these systems once, and they run forever."
+    </div>
+
+    <div class="key-point">
+      <span class="kp-label">Key Point</span>
+      "Set it up once, it works 24/7 without you. This is not a tool — it's a business that runs itself."
+    </div>
+  </div>
+  <div class="block-card-footer">
+    <p class="block-goal"><strong>Energy Check:</strong> By now, audience members should be imagining their own business running on autopilot. Some will be taking photos of the screen.</p>
+  </div>
+</article>
+
+</div>
+
+
+<!-- ═══════════════════ THE 8 AI AGENTS ═══════════════════ -->
+
+<div class="section-divider">
+  <div class="section-divider-inner">
+    <span class="section-label overview">The 8 AI Agents — The Big Picture</span>
+  </div>
+</div>
+
+<div class="blocks-container">
+
+<article class="block-card overview-block">
+  <div class="block-card-header">
+    <div class="time-badge" style="background: var(--sage-dark);">
+      <span class="time-range">50:00<br>60:00</span>
+      <span class="duration">10 min</span>
+    </div>
+    <div class="block-title-area">
+      <h2 class="block-title">The 8 AI Agents</h2>
+      <div class="block-meta">
+        <span class="purpose-tag"><span class="dot" style="background: var(--sage);"></span>The Full Vision — "Imagine All 8"</span>
+      </div>
+    </div>
+  </div>
+  <div class="block-card-body">
+
+    <div class="speaker-note">
+      <strong>Transition Into This Section</strong>
+      "You've seen three live demos today — AI images, AI content, AI automation. But that's only scratching the surface. In my course, I teach you how to build and sell 8 complete AI agent systems. Let me give you a quick look at all 8."
+    </div>
+
+    <p class="description-text">Spend roughly 1 minute on each agent. Keep it punchy — name, one-liner, one real example result.</p>
+
+    <div class="agent-grid">
+      <div class="agent-item">
+        <span class="agent-num">1</span><span class="agent-name">Lead Generation Agent</span>
+        <span class="agent-pitch">"Finds customers while you sleep"</span>
+        <span class="agent-example">Example: "A plumber got 27 new leads in one month without lifting a finger"</span>
+      </div>
+      <div class="agent-item">
+        <span class="agent-num">2</span><span class="agent-name">Content Agent</span>
+        <span class="agent-pitch">"Creates weeks of content in minutes"</span>
+        <span class="agent-example">Example: "30 Instagram posts with captions — generated in 4 minutes"</span>
+      </div>
+      <div class="agent-item">
+        <span class="agent-num">3</span><span class="agent-name">Voice Agent</span>
+        <span class="agent-pitch">"Answers your phone 24/7 professionally"</span>
+        <span class="agent-example">Example: "A dental practice never misses a call — AI handles bookings 24/7"</span>
+      </div>
+      <div class="agent-item">
+        <span class="agent-num">4</span><span class="agent-name">Video Agent</span>
+        <span class="agent-pitch">"Makes video ads without a camera crew"</span>
+        <span class="agent-example">Example: "A restaurant created 10 video ads in one afternoon for zero cost"</span>
+      </div>
+      <div class="agent-item">
+        <span class="agent-num">5</span><span class="agent-name">SEO Agent</span>
+        <span class="agent-pitch">"Gets you found on Google automatically"</span>
+        <span class="agent-example">Example: "A yoga studio went from page 5 to page 1 in 6 weeks"</span>
+      </div>
+      <div class="agent-item">
+        <span class="agent-num">6</span><span class="agent-name">Email Agent</span>
+        <span class="agent-pitch">"Sends personalised emails at scale"</span>
+        <span class="agent-example">Example: "2,000 personalised emails sent in one click — 38% open rate"</span>
+      </div>
+      <div class="agent-item">
+        <span class="agent-num">7</span><span class="agent-name">Chat Agent</span>
+        <span class="agent-pitch">"Handles customer questions instantly"</span>
+        <span class="agent-example">Example: "An online shop reduced support tickets by 70% in the first week"</span>
+      </div>
+      <div class="agent-item">
+        <span class="agent-num">8</span><span class="agent-name">Sales Agent</span>
+        <span class="agent-pitch">"Follows up and books meetings for you"</span>
+        <span class="agent-example">Example: "A consultant doubled their booked calls without hiring a VA"</span>
+      </div>
+    </div>
+
+    <div class="speaker-note">
+      <strong>After All 8</strong>
+      "Eight AI agents. Eight services you can offer to businesses. Eight ways to make money. In my course, you don't just learn about these — you BUILD two of them from scratch. A Customer Service Agent and a Social Media Management Agent. Both are real products you can sell the day you finish."
+    </div>
+
+    <div class="key-point">
+      <span class="kp-label">Key Point</span>
+      "In my course, you don't just learn about these — you BUILD two of them from scratch. Real products you can sell the day you finish."
+    </div>
+  </div>
+  <div class="block-card-footer">
+    <p class="block-goal"><strong>Energy Check:</strong> The audience should feel overwhelmed (in a good way) by the scale of opportunity. "There's so much here" is the feeling you want.</p>
+  </div>
+</article>
+
+</div>
+
+
+<!-- ═══════════════════ INTERACTIVE EXERCISE ═══════════════════ -->
+
+<div class="section-divider">
+  <div class="section-divider-inner">
+    <span class="section-label interactive">Interactive Exercise — Let Them Try</span>
+  </div>
+</div>
+
+<div class="blocks-container">
+
+<article class="block-card interactive-block">
+  <div class="block-card-header">
+    <div class="time-badge" style="background: var(--interactive-border);">
+      <span class="time-range">60:00<br>70:00</span>
+      <span class="duration">10 min</span>
+    </div>
+    <div class="block-title-area">
+      <h2 class="block-title">Let Them Try</h2>
+      <div class="block-meta">
+        <span class="purpose-tag"><span class="dot" style="background: var(--interactive-border);"></span>Hands-On — Personal Experience</span>
+      </div>
+    </div>
+  </div>
+  <div class="block-card-body">
+
+    <div class="speaker-note hook-note">
+      <strong>Say This (Clear Instructions)</strong>
+      "Alright, enough watching me. It's your turn. Everyone take out your phone right now. Open your browser. Go to chat.openai.com — or if you prefer, claude.ai. Either one works."
+    </div>
+
+    <p class="description-text">Wait for everyone to get their phones out. Walk to the centre of the room. Be patient. Give them 30-60 seconds.</p>
+
+    <div class="talking-points">
+      <h4>The Prompt to Give Them</h4>
+      <ul>
+        <li>Put this prompt on the screen (large text):</li>
+        <li><strong>"Write a professional Instagram caption for a local coffee shop promoting their new summer menu. Include 3 relevant hashtags."</strong></li>
+        <li>Read it out slowly and clearly. Spell out the URL if needed.</li>
+        <li>Say: "Type that in exactly as you see it, and hit enter."</li>
+      </ul>
+    </div>
+
+    <div class="talking-points">
+      <h4>While They Try (Walk Around)</h4>
+      <ul>
+        <li>Walk around the room. Look over shoulders. Help people who are struggling.</li>
+        <li>Point out good results: "Look at that one — that's Instagram-ready right now."</li>
+        <li>Let the excitement build organically. People will show each other.</li>
+        <li>Give them about 3-4 minutes to play with it.</li>
+      </ul>
+    </div>
+
+    <div class="speaker-note">
+      <strong>Bring Them Back</strong>
+      "Amazing, right? Now here's the thing — you just created professional marketing content on your phone in 30 seconds. For free. Now imagine being able to offer this as a service to businesses. Imagine charging 200, 500, even 1,000 pounds a month to do this for companies who don't know how."
+    </div>
+
+    <div class="key-point">
+      <span class="kp-label">Key Point</span>
+      "Now imagine being able to offer this as a service to businesses. That free tool on your phone just became a business."
+    </div>
+  </div>
+  <div class="block-card-footer">
+    <p class="block-goal"><strong>Energy Check:</strong> The room should be buzzing. People talking to each other, showing each other their screens. This is the highest-energy moment of the session.</p>
+  </div>
+</article>
+
+</div>
+
+
+<!-- ═══════════════════ THE CLOSE ═══════════════════ -->
+
+<div class="section-divider">
+  <div class="section-divider-inner">
+    <span class="section-label close">The Close — The Offer</span>
+  </div>
+</div>
+
+<div class="blocks-container">
+
+<article class="block-card close-block">
+  <div class="block-card-header">
+    <div class="time-badge" style="background: var(--close-border);">
+      <span class="time-range">70:00<br>82:00</span>
+      <span class="duration">12 min</span>
+    </div>
+    <div class="block-title-area">
+      <h2 class="block-title">The Offer</h2>
+      <div class="block-meta">
+        <span class="purpose-tag"><span class="dot" style="background: var(--close-border);"></span>Sales &amp; Conversion — The Money Moment</span>
+      </div>
+    </div>
+  </div>
+  <div class="block-card-body">
+
+    <p class="description-text"><strong>The Bridge (70:00 - 72:00)</strong> — Transition smoothly from the exercise energy into the offer. Don't change your tone dramatically — stay conversational.</p>
+
+    <div class="speaker-note close-note">
+      <strong>The Bridge</strong>
+      "Everything I showed you today — the image generation, the content creation, the automation, the voiceover, all 8 AI systems — I teach every single one step by step in my course. Not theory. Not slides. You sit down, you follow along, and you build."
+    </div>
+
+    <p class="description-text"><strong>Course Overview (72:00 - 75:00)</strong> — Keep this factual and confident. Not salesy.</p>
+
+    <div class="talking-points">
+      <h4>What's In The Course</h4>
+      <ul>
+        <li>8 complete modules covering every AI agent system you saw today</li>
+        <li>43 video lessons — short, practical, no fluff</li>
+        <li>Built-in AI tools you can use immediately</li>
+        <li>A professional certificate when you complete it</li>
+      </ul>
+    </div>
+
+    <p class="description-text"><strong>The Two Agent Builds (75:00 - 77:00)</strong> — This is the differentiator. Emphasise "build", not "learn about".</p>
+
+    <div class="speaker-note close-note">
+      <strong>The Builds</strong>
+      "By the middle of the course, you'll have built a working Customer Service AI Agent — the kind of thing businesses are paying thousands for right now. By the end, you'll have built a Social Media Management Agent. Both are real products. Both are sellable. Both are yours."
+    </div>
+
+    <p class="description-text"><strong>The Pricing Reveal (77:00 - 79:00)</strong> — Pause before you say the price. Let the anticipation build.</p>
+
+    <div class="speaker-note close-note">
+      <strong>The Price</strong>
+      "The course normally costs 297 pounds. That's less than what one single client would pay you to build one of these agents. But because you showed up today, because you invested your time and energy to be in this room... everyone here gets it for [workshop price]."
+    </div>
+
+    <p class="description-text"><strong>The Urgency (79:00 - 80:00)</strong> — Say this calmly but firmly. Don't shout it.</p>
+
+    <div class="speaker-note close-note">
+      <strong>Urgency</strong>
+      "This price is only available today. Right now. In this room. When you walk out of that door, it goes back to full price. This is a one-time offer for the people who showed up."
+    </div>
+
+    <p class="description-text"><strong>The MRR Mention (80:00 - 81:00)</strong> — Plant the resell seed.</p>
+
+    <div class="speaker-note close-note">
+      <strong>Resell Rights</strong>
+      "And if you go for the Business tier — you don't just get the course. You get the right to resell it. That means you can sell this exact course to your own audience, your own network, and keep 50% of every single sale. That's recurring income from a product you didn't have to build."
+    </div>
+
+    <p class="description-text"><strong>The QR Code (81:00 - 82:00)</strong> — Put it on screen NOW. Make it huge.</p>
+
+    <div class="speaker-note close-note">
+      <strong>The CTA</strong>
+      "Take out your phone. Scan this code. You'll be inside the course in 60 seconds. No complicated sign-up. Just scan, pay, and you're in."
+    </div>
+
+    <div class="key-point">
+      <span class="kp-label">Key Point</span>
+      Stay calm and confident during the close. You are offering value, not begging for a sale. The demos already did the selling — you are just opening the door.
+    </div>
+  </div>
+  <div class="block-card-footer">
+    <p class="block-goal"><strong>Energy Check:</strong> Phones should be coming out. You should see people scanning. Don't rush to Q&amp;A — let the QR code sit on screen.</p>
+  </div>
+</article>
+
+</div>
+
+
+<!-- ═══════════════════ Q&A ═══════════════════ -->
+
+<div class="section-divider">
+  <div class="section-divider-inner">
+    <span class="section-label qa">Q&amp;A — Handle Questions &amp; Final Push</span>
+  </div>
+</div>
+
+<div class="blocks-container">
+
+<article class="block-card qa-block">
+  <div class="block-card-header">
+    <div class="time-badge" style="background: #C06060;">
+      <span class="time-range">82:00<br>90:00</span>
+      <span class="duration">8 min</span>
+    </div>
+    <div class="block-title-area">
+      <h2 class="block-title">Q&amp;A and Final Push</h2>
+      <div class="block-meta">
+        <span class="purpose-tag"><span class="dot" style="background: #C06060;"></span>Objection Handling &amp; Last Conversions</span>
+      </div>
+    </div>
+  </div>
+  <div class="block-card-body">
+
+    <div class="speaker-note">
+      <strong>Open the Q&amp;A</strong>
+      "Before we wrap up — who has questions? About AI, about the course, about anything you saw today. No question is too simple."
+    </div>
+
+    <p class="description-text">Keep the QR code on screen the entire time. Every question answered is another chance for someone to decide to buy.</p>
+
+    <ul class="qa-list">
+      <li>
+        <div class="question">Q: "Do I need to be technical?"</div>
+        <div class="answer">A: "Absolutely not. If you can use a smartphone, you can do this. The course is designed for complete beginners. I'll walk you through every single click."</div>
+      </li>
+      <li>
+        <div class="question">Q: "How long does it take?"</div>
+        <div class="answer">A: "Most students complete it in 4 to 6 weeks doing just 30 minutes a day. But you can go at your own pace — once you're in, you have lifetime access."</div>
+      </li>
+      <li>
+        <div class="question">Q: "Can I really make money with this?"</div>
+        <div class="answer">A: "The course teaches you to sell AI services to businesses. Every business needs this. Plus with the resell rights on the Business tier — you can sell the course itself and keep 50% of every sale. That's two income streams from one purchase."</div>
+      </li>
+      <li>
+        <div class="question">Q: "What if it doesn't work for me?"</div>
+        <div class="answer">A: "30-day money back guarantee. No questions asked. If you're not happy, you get every penny back. There's literally zero risk."</div>
+      </li>
+      <li>
+        <div class="question">Q: "Is AI going to replace my job?"</div>
+        <div class="answer">A: "AI won't replace you — but someone who knows how to use AI might. That's exactly why you should be the person who knows how to use it. Be the one offering AI services, not the one being replaced by them."</div>
+      </li>
+      <li>
+        <div class="question">Q: "I don't have a business. Is this still useful?"</div>
+        <div class="answer">A: "Absolutely. You can start an AI services business from scratch. Or use the resell rights to sell the course. You don't need an existing business — AI is the business."</div>
+      </li>
+    </ul>
+
+    <div class="speaker-note close-note">
+      <strong>Final Push (Last 60 Seconds)</strong>
+      "The QR code is still on the screen. This is the last chance at this price. Once we leave this room, it's gone. If anything you saw today made you think 'I want to learn how to do that' — now is the time. Scan the code. You'll be inside the course before you get to your car."
+    </div>
+
+    <div class="speaker-note">
+      <strong>Thank You and Close</strong>
+      "Thank you all for being here today. Thank you for your time, your energy, and your curiosity. Whatever you decide, I hope today showed you what's possible with AI. For those of you joining the course — I'll see you inside. Let's go build something amazing."
+    </div>
+
+    <div class="key-point">
+      <span class="kp-label">Key Point</span>
+      Never end on a question. Always end on YOUR terms — with the CTA and a strong final line. Leave them inspired, not confused.
+    </div>
+  </div>
+  <div class="block-card-footer">
+    <p class="block-goal"><strong>After the Session:</strong> Stay in the room for 10-15 minutes. People will come up to you with questions. This is where you close the people who were "almost ready". Be warm, be patient, and have the QR code ready on your phone.</p>
+  </div>
+</article>
+
+</div>
+
+
+<!-- COMPLETION -->
+<section class="completion-section">
+  <div class="completion-box">
+    <div class="completion-badge">Session Complete</div>
+    <h2>You Have the Full Plan</h2>
+    <p>Every minute is mapped. Every script is written. Every transition is planned. Now trust the preparation, trust yourself, and go deliver a workshop they will never forget. The demos do the selling. The stories do the connecting. You just have to show up and be yourself.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="plan-footer">
+  <p>&copy; 2026 WavesAI Academy &mdash; AI Agents &amp; Automation Course &mdash; <a href="https://wavesaiacademy.com">wavesaiacademy.com</a></p>
+</footer>
+
+</body>
+</html>
