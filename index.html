@@ -22,6 +22,10 @@
   --gold: #D4A853;
   --gold-dim: rgba(212,168,83,0.10);
   --gold-border: rgba(212,168,83,0.25);
+  --navy: #1B2D4F;
+  --navy-light: #2A4270;
+  --navy-dim: rgba(27,45,79,0.06);
+  --navy-border: rgba(27,45,79,0.12);
   --text: #1a1a1a;
   --text-body: #555555;
   --text-dim: #999999;
@@ -81,7 +85,7 @@ a:hover { color: var(--text); }
   color: var(--text);
   letter-spacing: -0.5px;
 }
-.nav-logo span { color: var(--sage-dark); }
+.nav-logo span { color: var(--navy); }
 .nav-links {
   display: flex;
   align-items: center;
@@ -106,7 +110,7 @@ a:hover { color: var(--text); }
 .nav-links a:hover { color: var(--text); }
 .nav-links a:hover::after { width: 100%; }
 .nav-cta {
-  background: var(--sage);
+  background: var(--navy);
   color: #fff !important;
   padding: 10px 24px;
   border-radius: 50px;
@@ -115,7 +119,7 @@ a:hover { color: var(--text); }
   transition: all var(--transition);
 }
 .nav-cta::after { display: none !important; }
-.nav-cta:hover { background: var(--sage-dark); color: #fff !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(156,175,136,0.25); }
+.nav-cta:hover { background: var(--navy-light); color: #fff !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(27,45,79,0.25); }
 .nav-toggle {
   display: none;
   background: none;
@@ -199,7 +203,7 @@ a:hover { color: var(--text); }
 }
 .hero h1 em {
   font-style: italic;
-  color: var(--sage-dark);
+  color: var(--navy);
 }
 .hero-sub {
   font-size: 18px;
@@ -241,14 +245,14 @@ a:hover { color: var(--text); }
 }
 .btn-outline {
   background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
+  color: var(--navy);
+  border: 2px solid var(--navy-border);
 }
 .btn-outline:hover {
-  border-color: var(--sage);
-  color: var(--sage-dark);
+  border-color: var(--navy);
+  color: var(--navy);
   transform: translateY(-2px);
-  background: rgba(156,175,136,0.04);
+  background: var(--navy-dim);
 }
 .hero-trust {
   display: flex;
@@ -279,11 +283,11 @@ a:hover { color: var(--text); }
 }
 .mockup-frame {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 2px solid var(--navy-border);
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  box-shadow: 0 20px 60px rgba(27,45,79,0.08), 0 4px 16px rgba(0,0,0,0.04);
 }
 .mockup-bar {
   display: flex;
@@ -436,7 +440,7 @@ a:hover { color: var(--text); }
   font-family: var(--font-display);
   font-size: 28px;
   font-weight: 800;
-  color: var(--text);
+  color: var(--navy);
   letter-spacing: -0.5px;
 }
 .social-proof-stat-label {
@@ -460,7 +464,7 @@ section { padding: 100px 0; }
   gap: 8px;
   font-size: 12px;
   font-weight: 700;
-  color: var(--sage-dark);
+  color: var(--navy);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 16px;
@@ -468,7 +472,7 @@ section { padding: 100px 0; }
 .section-label::before {
   content: '';
   width: 24px; height: 1px;
-  background: var(--sage);
+  background: var(--navy);
 }
 .section-title {
   font-family: var(--font-display);
@@ -495,7 +499,7 @@ section { padding: 100px 0; }
 }
 .module-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 2px solid var(--navy-border);
   border-radius: var(--radius);
   padding: 28px;
   transition: all var(--transition);
@@ -507,21 +511,21 @@ section { padding: 100px 0; }
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 3px;
-  background: linear-gradient(90deg, var(--sage), transparent);
+  background: linear-gradient(90deg, var(--navy), var(--sage));
   opacity: 0;
   transition: opacity var(--transition);
 }
 .module-card:hover {
-  border-color: var(--sage-border);
+  border-color: var(--navy);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 30px rgba(27,45,79,0.08);
 }
 .module-card:hover::before { opacity: 1; }
 .module-num {
   font-family: var(--font-display);
   font-size: 36px;
   font-weight: 800;
-  color: rgba(156,175,136,0.18);
+  color: rgba(27,45,79,0.15);
   line-height: 1;
   margin-bottom: 12px;
 }
@@ -571,7 +575,7 @@ section { padding: 100px 0; }
   left: 16.66%;
   width: 66.66%;
   height: 2px;
-  background: linear-gradient(90deg, var(--sage), rgba(212,168,83,0.5), var(--gold));
+  background: linear-gradient(90deg, var(--navy), var(--sage), var(--gold));
 }
 .step-card {
   text-align: center;
@@ -591,9 +595,9 @@ section { padding: 100px 0; }
   z-index: 2;
 }
 .step-card:nth-child(1) .step-num {
-  background: rgba(156,175,136,0.10);
-  color: var(--sage-dark);
-  border: 2px solid rgba(156,175,136,0.25);
+  background: var(--navy-dim);
+  color: var(--navy);
+  border: 2px solid var(--navy-border);
 }
 .step-card:nth-child(2) .step-num {
   background: rgba(186,176,112,0.10);
@@ -630,16 +634,16 @@ section { padding: 100px 0; }
 }
 .feature-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: var(--radius);
   padding: 28px 24px;
   text-align: center;
   transition: all var(--transition);
 }
 .feature-card:hover {
-  border-color: var(--sage-border);
+  border-color: var(--navy-border);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 24px rgba(27,45,79,0.06);
 }
 .feature-icon {
   font-size: 32px;
@@ -686,7 +690,7 @@ section { padding: 100px 0; }
 }
 .tool-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 2px solid var(--navy-border);
   border-radius: 14px;
   padding: 20px;
   display: flex;
@@ -695,8 +699,8 @@ section { padding: 100px 0; }
   transition: all var(--transition);
 }
 .tool-card:hover {
-  border-color: var(--sage-border);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  border-color: var(--navy);
+  box-shadow: 0 4px 16px rgba(27,45,79,0.08);
 }
 .tool-icon-wrap {
   width: 44px; height: 44px;
@@ -742,7 +746,7 @@ section { padding: 100px 0; }
 }
 .price-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 2px solid var(--navy-border);
   border-radius: 20px;
   padding: 36px 28px;
   position: relative;
@@ -751,12 +755,13 @@ section { padding: 100px 0; }
 }
 .price-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  border-color: var(--navy);
+  box-shadow: 0 20px 60px rgba(27,45,79,0.10);
 }
 .price-card.featured {
-  border-color: var(--sage);
-  border-top: 3px solid var(--sage);
-  box-shadow: 0 8px 30px rgba(156,175,136,0.12);
+  border-color: var(--navy);
+  border-top: 4px solid var(--navy);
+  box-shadow: 0 8px 30px rgba(27,45,79,0.12);
   transform: scale(1.02);
 }
 .price-card.featured:hover { transform: scale(1.02) translateY(-4px); }
@@ -764,7 +769,7 @@ section { padding: 100px 0; }
   position: absolute;
   top: -12px; left: 50%;
   transform: translateX(-50%);
-  background: var(--sage);
+  background: var(--navy);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -790,7 +795,7 @@ section { padding: 100px 0; }
   font-family: var(--font-display);
   font-size: 48px;
   font-weight: 800;
-  color: var(--text);
+  color: var(--navy);
   letter-spacing: -1px;
   margin-bottom: 4px;
 }
@@ -843,13 +848,13 @@ section { padding: 100px 0; }
   text-decoration: none;
 }
 .price-btn-primary {
-  background: var(--sage);
+  background: var(--navy);
   color: #fff;
 }
 .price-btn-primary:hover {
-  background: var(--sage-dark);
+  background: var(--navy-light);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(156,175,136,0.25);
+  box-shadow: 0 4px 16px rgba(27,45,79,0.25);
 }
 .price-btn-outline {
   background: transparent;
@@ -1001,15 +1006,15 @@ section { padding: 100px 0; }
 }
 .testimonial-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 2px solid var(--navy-border);
   border-radius: var(--radius);
   padding: 28px;
   transition: all var(--transition);
   box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 .testimonial-card:hover {
-  border-color: var(--sage-border);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  border-color: var(--navy);
+  box-shadow: 0 8px 24px rgba(27,45,79,0.06);
 }
 .testimonial-stars {
   color: var(--gold);
@@ -1080,7 +1085,7 @@ section { padding: 100px 0; }
 .faq-icon {
   width: 28px; height: 28px;
   border-radius: 50%;
-  background: var(--sage-dim);
+  background: var(--navy-dim);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1089,11 +1094,11 @@ section { padding: 100px 0; }
 }
 .faq-icon svg {
   width: 12px; height: 12px;
-  fill: var(--sage-dark);
+  fill: var(--navy);
   transition: transform 0.3s;
 }
 .faq-item.open .faq-icon {
-  background: var(--sage);
+  background: var(--navy);
 }
 .faq-item.open .faq-icon svg {
   fill: #fff;
@@ -1117,7 +1122,7 @@ section { padding: 100px 0; }
   position: relative;
   overflow: hidden;
   padding: 120px 0;
-  background: var(--bg);
+  background: var(--navy);
 }
 .final-cta::before {
   content: '';
@@ -1125,34 +1130,34 @@ section { padding: 100px 0; }
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: 800px; height: 500px;
-  background: radial-gradient(ellipse, rgba(156,175,136,0.08) 0%, transparent 60%);
+  background: radial-gradient(ellipse, rgba(156,175,136,0.12) 0%, transparent 60%);
   pointer-events: none;
 }
 .final-cta-title {
   font-family: var(--font-display);
   font-size: clamp(32px, 4.5vw, 52px);
   font-weight: 800;
-  color: var(--text);
+  color: #fff;
   letter-spacing: -1px;
   margin-bottom: 16px;
   position: relative;
 }
 .final-cta-sub {
   font-size: 17px;
-  color: var(--text-body);
+  color: rgba(255,255,255,0.7);
   margin-bottom: 36px;
 }
 .final-cta-note {
   margin-top: 20px;
   font-size: 13px;
-  color: var(--text-dim);
+  color: rgba(255,255,255,0.5);
 }
 
 /* ===== FOOTER ===== */
 .footer {
   padding: 48px 0;
-  border-top: 1px solid var(--border);
-  background: var(--bg-warm);
+  border-top: none;
+  background: #142238;
 }
 .footer-inner {
   display: flex;
@@ -1165,9 +1170,9 @@ section { padding: 100px 0; }
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 700;
-  color: var(--text);
+  color: #fff;
 }
-.footer-logo span { color: var(--sage-dark); }
+.footer-logo span { color: var(--sage); }
 .footer-links {
   display: flex;
   gap: 24px;
@@ -1176,25 +1181,25 @@ section { padding: 100px 0; }
 }
 .footer-links a {
   font-size: 13px;
-  color: var(--text-dim);
+  color: rgba(255,255,255,0.5);
   transition: color var(--transition);
 }
-.footer-links a:hover { color: var(--sage-dark); }
+.footer-links a:hover { color: var(--sage); }
 .footer-family {
   width: 100%;
   text-align: center;
   margin-top: 24px;
   padding-top: 24px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,0.1);
   font-size: 12px;
-  color: var(--text-dim);
+  color: rgba(255,255,255,0.4);
 }
-.footer-family a { color: var(--sage-dark); }
+.footer-family a { color: var(--sage); }
 .footer-copy {
   width: 100%;
   text-align: center;
   font-size: 12px;
-  color: var(--text-dim);
+  color: rgba(255,255,255,0.4);
   margin-top: 12px;
 }
 
@@ -1409,7 +1414,7 @@ section { padding: 100px 0; }
         <div class="module-num">02</div>
         <div class="module-icon">🛠️</div>
         <div class="module-title">Your AI Toolkit</div>
-        <div class="module-desc">Master ChatGPT, Leonardo AI, ElevenLabs, and other essential tools. Hands-on walkthroughs of every platform you need.</div>
+        <div class="module-desc">Master Claude AI, ChatGPT, Leonardo AI, ElevenLabs, and other essential tools. Hands-on walkthroughs of every platform you need.</div>
         <div class="module-meta"><span>📹 6 Lessons</span><span>⏱ 2 hrs</span></div>
       </div>
       <div class="module-card reveal">
@@ -1556,8 +1561,15 @@ section { padding: 100px 0; }
           <div class="tool-card">
             <div class="tool-icon-wrap">🧠</div>
             <div>
+              <div class="tool-name">Claude AI</div>
+              <div class="tool-type">Agents &amp; Strategy</div>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon-wrap">💬</div>
+            <div>
               <div class="tool-name">ChatGPT</div>
-              <div class="tool-type">Text &amp; Strategy</div>
+              <div class="tool-type">Text &amp; Content</div>
             </div>
           </div>
           <div class="tool-card">
@@ -1792,7 +1804,7 @@ section { padding: 100px 0; }
           What AI tools do I get access to?
           <div class="faq-icon"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Pro and Business tier students get access to our built-in AI sandbox which includes ChatGPT, Leonardo AI (image generation), ElevenLabs (voice), D-ID (video avatars), and more. You get 500 credits to use these tools — no separate subscriptions needed.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Pro and Business tier students get access to our built-in AI sandbox which includes Claude AI (agents &amp; strategy), ChatGPT, Leonardo AI (image generation), ElevenLabs (voice), D-ID (video avatars), and more. You get 500 credits to use these tools — no separate subscriptions needed.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-question" onclick="toggleFaq(this)">
@@ -1824,7 +1836,7 @@ section { padding: 100px 0; }
   <div class="container">
     <div class="final-cta-title reveal">Ready to Start Your<br>AI Journey?</div>
     <div class="final-cta-sub reveal">Join 2,500+ students building profitable AI businesses.</div>
-    <a href="#pricing" class="btn btn-primary reveal" style="font-size:18px;padding:18px 48px;">Enrol Now — From £97</a>
+    <a href="#pricing" class="btn reveal" style="font-size:18px;padding:18px 48px;background:#fff;color:var(--navy);font-weight:700;">Enrol Now — From £97</a>
     <div class="final-cta-note reveal">30-day money back guarantee. Cancel risk-free.</div>
   </div>
 </section>
