@@ -2824,5 +2824,29 @@ document.querySelectorAll('.reveal').forEach(function(el) {
 })();
 </script>
 
+<!-- Referral Tracking -->
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var ref = params.get('ref');
+  if (ref) {
+    localStorage.setItem('wavesai_ref', ref);
+    document.cookie = 'wavesai_ref=' + ref + ';max-age=2592000;path=/;SameSite=Lax';
+  }
+  var stored = localStorage.getItem('wavesai_ref') || '';
+  if (!stored) {
+    var m = document.cookie.match(/wavesai_ref=([^;]+)/);
+    if (m) stored = m[1];
+  }
+  if (stored) {
+    document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a) {
+      var url = new URL(a.href);
+      url.searchParams.set('client_reference_id', stored);
+      a.href = url.toString();
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
